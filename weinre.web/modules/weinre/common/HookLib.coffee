@@ -68,8 +68,11 @@ class HookSite
         @target = object[property]
         @hookss = []
 
-        hookedFunction   = getHookedFunction(@target, this)
-        object[property] = hookedFunction
+ 	      if typeof @target == 'undefined'
+          console.log "Unable to hook " + property
+        else
+          hookedFunction   = getHookedFunction(@target, this)
+          object[property] = hookedFunction
 
     #---------------------------------------------------------------------------
     addHooks: (hooks) ->
