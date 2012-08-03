@@ -586,16 +586,16 @@ WebInspector.ElementsTreeElement.prototype = {
         if (this.expandAllButtonElement && this.expandAllButtonElement.__treeElement.parent)
             this.removeChild(this.expandAllButtonElement.__treeElement);
 
-        const node = this.representedObject;
+        var node = this.representedObject;
         if (!node.children)
             return;
-        const childNodeCount = node.children.length;
+        var childNodeCount = node.children.length;
 
         // In case some nodes from the expanded range were removed, pull some nodes from the collapsed range into the expanded range at the bottom.
         for (var i = this.expandedChildCount, limit = Math.min(this.expandedChildrenLimit, childNodeCount); i < limit; ++i)
             this.insertChildElement(node.children[i], i);
 
-        const expandedChildCount = this.expandedChildCount;
+        var expandedChildCount = this.expandedChildCount;
         if (childNodeCount > this.expandedChildCount) {
             var targetButtonIndex = expandedChildCount;
             if (!this.expandAllButtonElement) {

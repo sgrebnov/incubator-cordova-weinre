@@ -63,7 +63,7 @@ var KEYWORDS = array_to_hash([
         "break",
         "case",
         "catch",
-        "const",
+        "var",
         "continue",
         "default",
         "delete",
@@ -788,7 +788,7 @@ function parse($TEXT, strict_mode, embed_tokens) {
                             case "var":
                                 return prog1(var_, semicolon);
 
-                            case "const":
+                            case "var":
                                 return prog1(const_, semicolon);
 
                             case "while":
@@ -975,7 +975,7 @@ function parse($TEXT, strict_mode, embed_tokens) {
         };
 
         function const_() {
-                return as("const", vardefs());
+                return as("var", vardefs());
         };
 
         function new_() {

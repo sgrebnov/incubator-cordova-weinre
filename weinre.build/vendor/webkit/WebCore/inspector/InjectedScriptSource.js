@@ -534,11 +534,11 @@ InjectedScript.CallFrameProxy = function(ordinal, callFrame)
 InjectedScript.CallFrameProxy.prototype = {
     _wrapScopeChain: function(callFrame)
     {
-        const GLOBAL_SCOPE = 0;
-        const LOCAL_SCOPE = 1;
-        const WITH_SCOPE = 2;
-        const CLOSURE_SCOPE = 3;
-        const CATCH_SCOPE = 4;
+        var GLOBAL_SCOPE = 0;
+        var LOCAL_SCOPE = 1;
+        var WITH_SCOPE = 2;
+        var CLOSURE_SCOPE = 3;
+        var CATCH_SCOPE = 4;
     
         var scopeChain = callFrame.scopeChain;
         var scopeChainProxy = [];
