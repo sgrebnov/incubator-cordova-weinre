@@ -27,7 +27,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-const ExpressionStopCharacters = " =:[({;,!+-*/&|^<>";
+var ExpressionStopCharacters = " =:[({;,!+-*/&|^<>";
 
 WebInspector.ConsoleView = function(drawer)
 {

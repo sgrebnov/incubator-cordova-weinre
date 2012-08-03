@@ -71,7 +71,7 @@ var WebInspector = {
 
     _detectPlatformFlavor: function()
     {
-        const userAgent = navigator.userAgent;
+        var userAgent = navigator.userAgent;
 
         if (this.platform === "windows") {
             var match = userAgent.match(/Windows NT (\d+)\.(?:\d+)/);
@@ -687,7 +687,7 @@ WebInspector.documentClick = function(event)
             return;
         }
 
-        const profileMatch = WebInspector.ProfileType.URLRegExp.exec(anchor.href);
+        var profileMatch = WebInspector.ProfileType.URLRegExp.exec(anchor.href);
         if (profileMatch) {
             WebInspector.showProfileForURL(anchor.href);
             return;
@@ -754,7 +754,7 @@ WebInspector.documentKeyDown = function(event)
 {
     var isInputElement = event.target.nodeName === "INPUT";
     var isInEditMode = event.target.enclosingNodeOrSelfWithClass("text-prompt") || WebInspector.isEditingAnyField();
-    const helpKey = WebInspector.isMac() ? "U+003F" : "U+00BF"; // "?" for both platforms
+    var helpKey = WebInspector.isMac() ? "U+003F" : "U+00BF"; // "?" for both platforms
 
     if (event.keyIdentifier === "F1" ||
         (event.keyIdentifier === helpKey && event.shiftKey && (!isInEditMode && !isInputElement || event.metaKey))) {
@@ -910,10 +910,10 @@ WebInspector.animateStyle = function(animations, duration, callback)
     var complete = 0;
     var hasCompleted = false;
 
-    const intervalDuration = (1000 / 30); // 30 frames per second.
-    const animationsLength = animations.length;
-    const propertyUnit = {opacity: ""};
-    const defaultUnit = "px";
+    var intervalDuration = (1000 / 30); // 30 frames per second.
+    var animationsLength = animations.length;
+    var propertyUnit = {opacity: ""};
+    var defaultUnit = "px";
 
     function cubicInOut(t, b, c, d)
     {

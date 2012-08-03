@@ -96,7 +96,7 @@ function ast_walker(ast) {
                         return out;
                 },
                 "var": _vardefs,
-                "const": _vardefs,
+                "var": _vardefs,
                 "try": function(t, c, f) {
                         return [
                                 this[0],
@@ -396,7 +396,7 @@ function ast_add_scope(ast) {
                         "var": function(defs) {
                                 MAP(defs, function(d){ define(d[0]) });
                         },
-                        "const": function(defs) {
+                        "var": function(defs) {
                                 MAP(defs, function(d){ define(d[0]) });
                         },
                         "try": function(t, c, f) {
@@ -507,7 +507,7 @@ function ast_mangle(ast, do_toplevel) {
                         return ast;
                 },
                 "var": _vardefs,
-                "const": _vardefs,
+                "var": _vardefs,
                 "name": function(name) {
                         return [ this[0], get_mangled(name) ];
                 },
@@ -688,7 +688,7 @@ function ast_squeeze(ast, options) {
                 statements = (function(a, prev){
                         statements.forEach(function(cur){
                                 if (prev && ((cur[0] == "var" && prev[0] == "var") ||
-                                             (cur[0] == "const" && prev[0] == "const"))) {
+                                             (cur[0] == "var" && prev[0] == "var"))) {
                                         prev[1] = prev[1].concat(cur[1]);
                                 } else {
                                         a.push(cur);
@@ -701,7 +701,7 @@ function ast_squeeze(ast, options) {
                 if (options.dead_code) statements = (function(a, has_quit){
                         statements.forEach(function(st){
                                 if (has_quit) {
-                                        if (member(st[0], [ "function", "defun" , "var", "const" ])) {
+                                        if (member(st[0], [ "function", "defun" , "var", "var" ])) {
                                                 a.push(st);
                                         }
                                         else if (!options.no_warnings)
@@ -1082,8 +1082,8 @@ function gen_code(ast, beautify) {
                 "var": function(defs) {
                         return "var " + add_commas(MAP(defs, make_1vardef)) + ";";
                 },
-                "const": function(defs) {
-                        return "const " + add_commas(MAP(defs, make_1vardef)) + ";";
+                "var": function(defs) {
+                        return "var " + add_commas(MAP(defs, make_1vardef)) + ";";
                 },
                 "try": function(tr, ca, fi) {
                         var out = [ "try", make_block(tr) ];
