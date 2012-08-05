@@ -225,8 +225,8 @@ module.exports = class CSSStore
             name = styleDecl.item(i)
             property.name          = name
             property.priority      = styleDecl.getPropertyPriority(name)
-            property.implicit      = styleDecl.isPropertyImplicit(name)
-            property.shorthandName = styleDecl.getPropertyShorthand(name) or ""
+            property.implicit      = if (typeof styleDecl.isPropertyImplicit != "undefined") then styleDecl.isPropertyImplicit else true
+            property.shorthandName = if (typeof styleDecl.getPropertyShorthand != "undefined") then (styleDecl.getPropertyShorthand(name) or "") else ""
             property.status        = (if property.shorthandName then "style" else "active")
             property.parsedOk      = true
             property.value         = styleDecl.getPropertyValue(name)
