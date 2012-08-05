@@ -604,7 +604,11 @@ function CommandLineAPI(commandLineAPIImpl, callFrame)
         if (member in inspectedWindow || inScopeVariables(member))
             continue;
 
-        this.__defineGetter__("$" + i, bind(commandLineAPIImpl, commandLineAPIImpl._inspectedNode, i));
+        // fix for non-webkit browsers
+        //this.__defineGetter__("$" + i, bind(commandLineAPIImpl, commandLineAPIImpl._inspectedNode, i));
+        Object.defineProperty(this, "$" + i, {
+            get: bind(commandLineAPIImpl, commandLineAPIImpl._inspectedNode, i)
+        });
     }
 }
 
