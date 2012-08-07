@@ -118,8 +118,15 @@ InjectedScript.prototype = {
         if (!this._isDefined(object))
             return false;
         var properties = [];
+        var propertyNames;
 
-        var propertyNames = ignoreHasOwnProperty ? this._getPropertyNames(object) : Object.getOwnPropertyNames(object);
+        // IE returns 'Invalid calling object' for some of the prototypes, so return the object itself
+        if (window.navigator.userAgent.indexOf("MSIE") != -1 ) {
+            propertyNames = this._getPropertyNames(object);
+        } else
+            propertyNames = ignoreHasOwnProperty ? this._getPropertyNames(object) : Object.getOwnPropertyNames(object);
+
+
         if (!ignoreHasOwnProperty && object.__proto__)
             propertyNames.push("__proto__");
     
@@ -183,7 +190,7 @@ InjectedScript.prototype = {
 
     _populatePropertyNames: function(object, resultSet)
     {
-        for (var o = object; o; o = o.__proto__) {
+        for (var o = object; o; o = Object.getPrototypeOf(o)) {
             try {
                 var names = Object.getOwnPropertyNames(o);
                 for (var i = 0; i < names.length; ++i)
@@ -368,9 +375,16 @@ InjectedScript.prototype = {
 
         var result = [];
         var prototype = node;
+
+//        if (window.navigator.userAgent.indexOf("MSIE") != -1 )
+//        {
+//            result.push(this._wrapObject(prototype, "prototypes"));
+//            return result;
+//        }
+
         do {
             result.push(this._wrapObject(prototype, "prototypes"));
-            prototype = prototype.__proto__;
+            prototype = Object.getPrototypeOf(prototype);
         } while (prototype)
         return result;
     },
@@ -419,8 +433,15 @@ InjectedScript.prototype = {
         if (!inspectedWindow.document)
             return type;
 
-        if (obj instanceof inspectedWindow.Node)
-            return (obj.nodeType === undefined ? type : "node");
+        if (obj instanceof inspectedWindow.Node) {
+
+            try {
+                return (obj.nodeType === undefined ? type : "node");
+            } catch (ex) {} // for IE there could be 'Invalid calling object' exception
+
+            return obj.toString();
+        }
+
         if (obj instanceof inspectedWindow.String)
             return "string";
         if (obj instanceof inspectedWindow.Array)
@@ -510,7 +531,7 @@ InjectedScript.RemoteObject.fromObject = function(object, objectId, abbreviate)
 {
     var type = injectedScript._type(object);
     var rawType = typeof object;
-    var hasChildren = (rawType === "object" && object !== null && (Object.getOwnPropertyNames(object).length || !!object.__proto__)) || rawType === "function";
+    var hasChildren = (rawType === "object" && object !== null && (Object.getOwnPropertyNames(object).length || !!Object.getPrototypeOf(object))) || rawType === "function";
     var description = "";
     try {
         var description = injectedScript._describe(object, abbreviate);
