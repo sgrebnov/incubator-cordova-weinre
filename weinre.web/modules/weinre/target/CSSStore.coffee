@@ -334,9 +334,13 @@ _webkitMatchesSelector = (element, selector) ->
       element.webkitMatchesSelector selector
 
 #-------------------------------------------------------------------------------
+_msMatchesSelector = (element, selector) ->
+      return false unless element.msMatchesSelector
+      element.msMatchesSelector selector
+
+#-------------------------------------------------------------------------------
 _fallbackMatchesSelector = (element, selector) ->
       false
-
 #-------------------------------------------------------------------------------
 if      (Element.prototype.webkitMatchesSelector)
     _elementMatchesSelector = _webkitMatchesSelector
@@ -344,9 +348,10 @@ if      (Element.prototype.webkitMatchesSelector)
 else if (Element.prototype.mozMatchesSelector)
     _elementMatchesSelector = _mozMatchesSelector
 
+else if (Element.prototype.msMatchesSelector)
+    _elementMatchesSelector = _msMatchesSelector
 else
     _elementMatchesSelector = _fallbackMatchesSelector
 
 #-------------------------------------------------------------------------------
 require("../common/MethodNamer").setNamesForClass(module.exports)
-
