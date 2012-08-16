@@ -18,6 +18,8 @@
 # under the License.
 #---------------------------------------------------------------------------------
 
+require('./BrowserHacks').apply()
+
 Ex                            = require('../common/Ex')
 Binding                       = require('../common/Binding')
 Callback                      = require('../common/Callback')
