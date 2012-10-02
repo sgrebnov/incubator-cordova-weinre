@@ -280,7 +280,7 @@ Element.prototype.createChild = function(elementName, className)
     return element;
 }
 
-Element.prototype.__defineGetter__("totalOffsetLeft", function()
+Object.defineProperty(Element.prototype, "totalOffsetLeft", function()
 {
     var total = 0;
     for (var element = this; element; element = element.offsetParent)
@@ -288,7 +288,7 @@ Element.prototype.__defineGetter__("totalOffsetLeft", function()
     return total;
 });
 
-Element.prototype.__defineGetter__("totalOffsetTop", function()
+Object.defineProperty(Element.prototype, "totalOffsetTop", function()
 {
     var total = 0;
     for (var element = this; element; element = element.offsetParent)
@@ -314,7 +314,7 @@ Element.prototype.offsetRelativeToWindow = function(targetWindow)
     return elementOffset;
 }
 
-KeyboardEvent.prototype.__defineGetter__("data", function()
+Object.defineProperty(KeyboardEvent.prototype, "data", function()
 {
     // Emulate "data" attribute from DOM 3 TextInput event.
     // See http://www.w3.org/TR/DOM-Level-3-Events/#events-Events-TextEvent-data
@@ -350,7 +350,7 @@ Text.prototype.select = function(start, end)
     return this;
 }
 
-Element.prototype.__defineGetter__("selectionLeftOffset", function() {
+Object.defineProperty(Element.prototype, "selectionLeftOffset", function() {
     // Calculate selection offset relative to the current element.
 
     var selection = window.getSelection();

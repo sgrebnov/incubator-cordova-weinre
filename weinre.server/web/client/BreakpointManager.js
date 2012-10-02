@@ -38,9 +38,10 @@ WebInspector.BreakpointManager = function()
     this._breakpoints = {};
     this._domBreakpointsRestored = false;
 
-    WebInspector.settings.addEventListener(WebInspector.Settings.Events.ProjectChanged, this._projectChanged, this);
-    WebInspector.debuggerModel.addEventListener(WebInspector.DebuggerModel.Events.DebuggerPaused, this._debuggerPaused, this);
-    WebInspector.debuggerModel.addEventListener(WebInspector.DebuggerModel.Events.DebuggerResumed, this._debuggerResumed, this);
+// TODO IE
+//    WebInspector.settings.addEventListener(WebInspector.Settings.Events.ProjectChanged, this._projectChanged, this);
+//    WebInspector.debuggerModel.addEventListener(WebInspector.DebuggerModel.Events.DebuggerPaused, this._debuggerPaused, this);
+//    WebInspector.debuggerModel.addEventListener(WebInspector.DebuggerModel.Events.DebuggerResumed, this._debuggerResumed, this);
 }
 
 WebInspector.BreakpointManager.BreakpointTypes = {

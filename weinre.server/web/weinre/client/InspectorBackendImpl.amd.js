@@ -23,9 +23,11 @@ module.exports = InspectorBackendImpl = (function() {
     for (_i = 0, _len = intfNames.length; _i < _len; _i++) {
       intfName = intfNames[_i];
       proxy = Weinre.messageDispatcher.createProxy(intfName);
-      if (window[intfName]) {
-        throw new Ex(arguments, "backend interface '" + intfName + "' already created");
-      }
+        // TODO IE
+//      if (window[intfName]) {
+//        throw new Ex(arguments, "backend interface '" + intfName + "' already created");
+//      }
+
       intf = IDLTools.getIDL(intfName);
       if (!intf) {
         throw new Ex(arguments, "interface not registered: '" + intfName + "'");

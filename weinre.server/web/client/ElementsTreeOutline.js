@@ -30,9 +30,11 @@
 
 WebInspector.ElementsTreeOutline = function() {
     this.element = document.createElement("ol");
-    this.element.addEventListener("mousedown", this._onmousedown.bind(this), false);
-    this.element.addEventListener("mousemove", this._onmousemove.bind(this), false);
-    this.element.addEventListener("mouseout", this._onmouseout.bind(this), false);
+
+    // TODO IE
+//    this.element.addEventListener("mousedown", this._onmousedown.bind(this), false);
+//    this.element.addEventListener("mousemove", this._onmousemove.bind(this), false);
+//    this.element.addEventListener("mouseout", this._onmouseout.bind(this), false);
 
     TreeOutline.call(this, this.element);
 
@@ -41,8 +43,8 @@ WebInspector.ElementsTreeOutline = function() {
     this.showInElementsPanelEnabled = false;
     this.rootDOMNode = null;
     this.focusedDOMNode = null;
-
-    this.element.addEventListener("contextmenu", this._contextMenuEventFired.bind(this), true);
+    // TODO IE
+    //this.element.addEventListener("contextmenu", this._contextMenuEventFired.bind(this), true);
 }
 
 WebInspector.ElementsTreeOutline.prototype = {
