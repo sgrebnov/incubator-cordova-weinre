@@ -18,7 +18,7 @@
 # under the License.
 #---------------------------------------------------------------------------------
 
-require('./BrowserHacks').apply()
+require('./BrowserHacks')
 
 Ex                            = require('../common/Ex')
 Binding                       = require('../common/Binding')
