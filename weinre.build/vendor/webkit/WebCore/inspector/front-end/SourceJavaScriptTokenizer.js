@@ -46,7 +46,7 @@ WebInspector.SourceJavaScriptTokenizer = function()
     WebInspector.SourceTokenizer.call(this);
 
     this._keywords = [
-        "null", "true", "false", "break", "case", "catch", "var", "default", "finally", "for",
+        "null", "true", "false", "break", "case", "catch", "const", "default", "finally", "for",
         "instanceof", "new", "var", "continue", "function", "return", "void", "delete", "if",
         "this", "do", "while", "else", "in", "switch", "throw", "try", "typeof", "debugger",
         "class", "enum", "export", "extends", "import", "super", "get", "set", "with"
