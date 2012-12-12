@@ -564,7 +564,7 @@ WebInspector.StylesSidebarPane.prototype = {
     }
 }
 
-crossExtend(WebInspector.StylesSidebarPane, WebInspector.SidebarPane);
+extend(WebInspector.StylesSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.ComputedStyleSidebarPane = function()
 {
@@ -589,7 +589,7 @@ WebInspector.ComputedStyleSidebarPane = function()
     showInheritedCheckbox.addEventListener(showInheritedToggleFunction.bind(this));
 }
 
-crossExtend(WebInspector.ComputedStyleSidebarPane, WebInspector.SidebarPane);
+extend(WebInspector.ComputedStyleSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.StylePropertiesSection = function(styleRule, editable, isInherited, isFirstSection)
 {
@@ -968,7 +968,7 @@ WebInspector.StylePropertiesSection.prototype = {
     }
 }
 
-crossExtend(WebInspector.StylePropertiesSection, WebInspector.PropertiesSection);
+extend(WebInspector.StylePropertiesSection, WebInspector.PropertiesSection);
 
 WebInspector.ComputedStylePropertiesSection = function(styleRule, usedProperties, disabledComputedProperties)
 {
@@ -1068,7 +1068,7 @@ WebInspector.ComputedStylePropertiesSection.prototype = {
     }
 }
 
-crossExtend(WebInspector.ComputedStylePropertiesSection, WebInspector.PropertiesSection);
+extend(WebInspector.ComputedStylePropertiesSection, WebInspector.PropertiesSection);
 
 WebInspector.BlankStylePropertiesSection = function(defaultSelectorText)
 {
@@ -1119,7 +1119,7 @@ WebInspector.BlankStylePropertiesSection.prototype = {
     }
 }
 
-crossExtend(WebInspector.BlankStylePropertiesSection, WebInspector.StylePropertiesSection);
+extend(WebInspector.BlankStylePropertiesSection, WebInspector.StylePropertiesSection);
 
 WebInspector.StylePropertyTreeElement = function(styleRule, style, property, shorthand, inherited, overloaded)
 {
@@ -1900,7 +1900,7 @@ WebInspector.StylePropertyTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.StylePropertyTreeElement, TreeElement);
+extend(WebInspector.StylePropertyTreeElement, TreeElement);
 
 WebInspector.StylesSidebarPane.CSSPropertyPrompt = function(element, cssCompletions)
 {
@@ -1972,4 +1972,4 @@ WebInspector.StylesSidebarPane.CSSPropertyPrompt.prototype = {
     }
 }
 
-crossExtend(WebInspector.StylesSidebarPane.CSSPropertyPrompt, WebInspector.TextPrompt);
+extend(WebInspector.StylesSidebarPane.CSSPropertyPrompt, WebInspector.TextPrompt);

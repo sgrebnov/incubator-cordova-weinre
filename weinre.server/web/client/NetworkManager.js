@@ -73,7 +73,7 @@ WebInspector.NetworkManager.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkManager, WebInspector.Object);
+extend(WebInspector.NetworkManager, WebInspector.Object);
 
 WebInspector.NetworkDispatcher = function(resourceTreeModel, manager)
 {

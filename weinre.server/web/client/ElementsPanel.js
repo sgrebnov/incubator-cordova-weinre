@@ -1084,4 +1084,4 @@ WebInspector.ElementsPanel.prototype = {
     }
 }
 
-crossExtend(WebInspector.ElementsPanel, WebInspector.Panel);
+extend(WebInspector.ElementsPanel, WebInspector.Panel);

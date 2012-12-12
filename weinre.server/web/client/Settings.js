@@ -163,4 +163,4 @@ WebInspector.Settings.prototype = {
     }
 }
 
-crossExtend(WebInspector.Settings, WebInspector.Object);
+extend(WebInspector.Settings, WebInspector.Object);

@@ -114,7 +114,7 @@ WebInspector.EventListenersSidebarPane.prototype = {
     }
 }
 
-crossExtend(WebInspector.EventListenersSidebarPane, WebInspector.SidebarPane);
+extend(WebInspector.EventListenersSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.EventListenersSection = function(title, nodeId)
 {
@@ -161,7 +161,7 @@ WebInspector.EventListenersSection.prototype = {
     }
 }
 
-crossExtend(WebInspector.EventListenersSection, WebInspector.PropertiesSection);
+extend(WebInspector.EventListenersSection, WebInspector.PropertiesSection);
 
 WebInspector.EventListenerBar = function(eventListener, nodeId)
 {
@@ -232,4 +232,4 @@ WebInspector.EventListenerBar.prototype = {
     }
 }
 
-crossExtend(WebInspector.EventListenerBar, WebInspector.ObjectPropertiesSection);
+extend(WebInspector.EventListenerBar, WebInspector.ObjectPropertiesSection);

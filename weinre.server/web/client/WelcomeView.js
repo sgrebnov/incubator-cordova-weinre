@@ -70,4 +70,4 @@ WebInspector.WelcomeView.prototype = {
     }
 }
 
-crossExtend(WebInspector.WelcomeView, WebInspector.View);
+extend(WebInspector.WelcomeView, WebInspector.View);

@@ -145,4 +145,4 @@ WebInspector.StatusBarButton.prototype = {
     }
 }
 
-crossExtend(WebInspector.StatusBarButton, WebInspector.Object);
+extend(WebInspector.StatusBarButton, WebInspector.Object);

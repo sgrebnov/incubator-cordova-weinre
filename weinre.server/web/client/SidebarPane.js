@@ -130,4 +130,4 @@ WebInspector.SidebarPane.prototype = {
     }
 }
 
-crossExtend(WebInspector.SidebarPane, WebInspector.Object);
+extend(WebInspector.SidebarPane, WebInspector.Object);

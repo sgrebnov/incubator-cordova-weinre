@@ -180,7 +180,7 @@ WebInspector.CSSStyleModel.prototype = {
     }
 }
 
-crossExtend(WebInspector.CSSStyleModel,  WebInspector.Object);
+extend(WebInspector.CSSStyleModel,  WebInspector.Object);
 
 WebInspector.CSSStyleDeclaration = function(payload)
 {

@@ -293,7 +293,7 @@ WebInspector.ElementsTreeOutline.prototype = {
     }
 }
 
-crossExtend(WebInspector.ElementsTreeOutline, TreeOutline);
+extend(WebInspector.ElementsTreeOutline, TreeOutline);
 
 WebInspector.ElementsTreeElement = function(node, elementCloseTag)
 {
@@ -1438,4 +1438,4 @@ WebInspector.ElementsTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.ElementsTreeElement, TreeElement);
+extend(WebInspector.ElementsTreeElement, TreeElement);

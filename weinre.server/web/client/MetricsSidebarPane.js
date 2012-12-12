@@ -240,4 +240,4 @@ WebInspector.MetricsSidebarPane.prototype = {
     }
 }
 
-crossExtend(WebInspector.MetricsSidebarPane, WebInspector.SidebarPane);
+extend(WebInspector.MetricsSidebarPane, WebInspector.SidebarPane);

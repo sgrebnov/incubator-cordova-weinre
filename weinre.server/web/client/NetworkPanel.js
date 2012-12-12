@@ -1075,7 +1075,7 @@ WebInspector.NetworkPanel.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkPanel, WebInspector.Panel);
+extend(WebInspector.NetworkPanel, WebInspector.Panel);
 
 WebInspector.NetworkBaseCalculator = function()
 {
@@ -1314,7 +1314,7 @@ WebInspector.NetworkTimeCalculator.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkTimeCalculator, WebInspector.NetworkBaseCalculator);
+extend(WebInspector.NetworkTimeCalculator, WebInspector.NetworkBaseCalculator);
 
 WebInspector.NetworkTransferTimeCalculator = function()
 {
@@ -1338,7 +1338,7 @@ WebInspector.NetworkTransferTimeCalculator.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkTransferTimeCalculator, WebInspector.NetworkTimeCalculator);
+extend(WebInspector.NetworkTransferTimeCalculator, WebInspector.NetworkTimeCalculator);
 
 WebInspector.NetworkTransferDurationCalculator = function()
 {
@@ -1357,7 +1357,7 @@ WebInspector.NetworkTransferDurationCalculator.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkTransferDurationCalculator, WebInspector.NetworkTimeCalculator);
+extend(WebInspector.NetworkTransferDurationCalculator, WebInspector.NetworkTimeCalculator);
 
 WebInspector.NetworkDataGridNode = function(panel, resource)
 {
@@ -1710,7 +1710,7 @@ WebInspector.NetworkDataGridNode.ResourcePropertyComparator = function(propertyN
     return 0;
 }
 
-crossExtend(WebInspector.NetworkDataGridNode, WebInspector.DataGridNode);
+extend(WebInspector.NetworkDataGridNode, WebInspector.DataGridNode);
 
 WebInspector.NetworkTotalGridNode = function(element)
 {
@@ -1739,4 +1739,4 @@ WebInspector.NetworkTotalGridNode.prototype = {
     }
 }
 
-crossExtend(WebInspector.NetworkTotalGridNode, WebInspector.DataGridNode);
+extend(WebInspector.NetworkTotalGridNode, WebInspector.DataGridNode);

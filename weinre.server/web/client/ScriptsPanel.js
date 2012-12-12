@@ -1050,7 +1050,7 @@ WebInspector.ScriptsPanel.prototype = {
     }
 }
 
-crossExtend(WebInspector.ScriptsPanel, WebInspector.Panel);
+extend(WebInspector.ScriptsPanel, WebInspector.Panel);
 
 
 WebInspector.SourceFrameContentProviderForScript = function(script)
@@ -1080,4 +1080,4 @@ WebInspector.SourceFrameContentProviderForScript.prototype = {
     }
 }
 
-crossExtend(WebInspector.SourceFrameContentProviderForScript, WebInspector.SourceFrameContentProvider);
+extend(WebInspector.SourceFrameContentProviderForScript, WebInspector.SourceFrameContentProvider);

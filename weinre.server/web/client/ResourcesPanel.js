@@ -768,7 +768,7 @@ WebInspector.ResourcesPanel.prototype = {
     }
 }
 
-crossExtend(WebInspector.ResourcesPanel, WebInspector.Panel);
+extend(WebInspector.ResourcesPanel, WebInspector.Panel);
 
 WebInspector.BaseStorageTreeElement = function(storagePanel, representedObject, title, iconClass, hasChildren)
 {
@@ -834,7 +834,7 @@ WebInspector.BaseStorageTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.BaseStorageTreeElement, TreeElement);
+extend(WebInspector.BaseStorageTreeElement, TreeElement);
 
 WebInspector.StorageCategoryTreeElement = function(storagePanel, categoryName, settingsKey, iconClass)
 {
@@ -873,7 +873,7 @@ WebInspector.StorageCategoryTreeElement.prototype = {
         WebInspector.settings[this._expandedSettingKey] = false;
     }
 }
-crossExtend(WebInspector.StorageCategoryTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.StorageCategoryTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.FrameTreeElement = function(storagePanel, frameId, title, subtitle)
 {
@@ -944,7 +944,7 @@ WebInspector.FrameTreeElement.prototype = {
         }
     }
 }
-crossExtend(WebInspector.FrameTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.FrameTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.FrameResourceTreeElement = function(storagePanel, resource)
 {
@@ -1075,7 +1075,7 @@ WebInspector.FrameResourceTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.FrameResourceTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.FrameResourceTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.DatabaseTreeElement = function(storagePanel, database)
 {
@@ -1116,7 +1116,7 @@ WebInspector.DatabaseTreeElement.prototype = {
     }
 
 }
-crossExtend(WebInspector.DatabaseTreeElement,  WebInspector.BaseStorageTreeElement);
+extend(WebInspector.DatabaseTreeElement,  WebInspector.BaseStorageTreeElement);
 
 WebInspector.DatabaseTableTreeElement = function(storagePanel, database, tableName)
 {
@@ -1137,7 +1137,7 @@ WebInspector.DatabaseTableTreeElement.prototype = {
         this._storagePanel.showDatabase(this._database, this._tableName);
     }
 }
-crossExtend(WebInspector.DatabaseTableTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.DatabaseTableTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.DOMStorageTreeElement = function(storagePanel, domStorage, className)
 {
@@ -1157,7 +1157,7 @@ WebInspector.DOMStorageTreeElement.prototype = {
         this._storagePanel.showDOMStorage(this._domStorage);
     }
 }
-crossExtend(WebInspector.DOMStorageTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.DOMStorageTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.CookieTreeElement = function(storagePanel, cookieDomain)
 {
@@ -1177,7 +1177,7 @@ WebInspector.CookieTreeElement.prototype = {
         this._storagePanel.showCookies(this, this._cookieDomain);
     }
 }
-crossExtend(WebInspector.CookieTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.CookieTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.ApplicationCacheTreeElement = function(storagePanel, appcacheDomain)
 {
@@ -1197,7 +1197,7 @@ WebInspector.ApplicationCacheTreeElement.prototype = {
         this._storagePanel.showApplicationCache(this, this._appcacheDomain);
     }
 }
-crossExtend(WebInspector.ApplicationCacheTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.ApplicationCacheTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.ResourceRevisionTreeElement = function(storagePanel, revision)
 {
@@ -1238,7 +1238,7 @@ WebInspector.ResourceRevisionTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.ResourceRevisionTreeElement, WebInspector.BaseStorageTreeElement);
+extend(WebInspector.ResourceRevisionTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.StorageCategoryView = function()
 {
@@ -1258,4 +1258,4 @@ WebInspector.StorageCategoryView.prototype = {
     }
 }
 
-crossExtend(WebInspector.StorageCategoryView, WebInspector.View);
+extend(WebInspector.StorageCategoryView, WebInspector.View);

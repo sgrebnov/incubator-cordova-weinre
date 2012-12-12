@@ -267,7 +267,7 @@ WebInspector.DOMDocument.prototype = {
     }
 }
 
-crossExtend(WebInspector.DOMDocument, WebInspector.DOMNode);
+extend(WebInspector.DOMDocument, WebInspector.DOMNode);
 
 
 WebInspector.DOMWindow = function(domAgent)

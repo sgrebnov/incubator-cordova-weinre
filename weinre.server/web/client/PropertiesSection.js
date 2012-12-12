@@ -41,4 +41,4 @@ WebInspector.PropertiesSection = function(title, subtitle)
     this.element.appendChild(this.propertiesElement);
 }
 
-crossExtend(WebInspector.PropertiesSection, WebInspector.Section);
+extend(WebInspector.PropertiesSection, WebInspector.Section);

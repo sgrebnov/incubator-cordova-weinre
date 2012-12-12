@@ -84,7 +84,7 @@ WebInspector.ObjectPropertiesSection.prototype = {
     }
 }
 
-crossExtend(WebInspector.ObjectPropertiesSection, WebInspector.PropertiesSection);
+extend(WebInspector.ObjectPropertiesSection, WebInspector.PropertiesSection);
 
 WebInspector.ObjectPropertiesSection.CompareProperties = function(propertyA, propertyB) 
 {
@@ -298,4 +298,4 @@ WebInspector.ObjectPropertyTreeElement.prototype = {
     }
 }
 
-crossExtend(WebInspector.ObjectPropertyTreeElement, TreeElement);
+extend(WebInspector.ObjectPropertyTreeElement, TreeElement);
