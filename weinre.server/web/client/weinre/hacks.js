@@ -55,3 +55,7 @@
 
     }
 })();
+
+if (!HTMLElement.prototype.scrollIntoViewIfNeeded){
+    HTMLElement.prototype.scrollIntoViewIfNeeded = HTMLElement.prototype.scrollIntoView;
+}
