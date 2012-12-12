@@ -402,6 +402,7 @@ WebInspector.StylesSidebarPane.prototype = {
 
     _rebuildSectionsForStyleRules: function(styleRules, usedProperties, disabledComputedProperties, pseudoId, anchorElement)
     {
+        anchorElement = anchorElement || null;
         // Make a property section for each style rule.
         var sections = [];
         var lastWasSeparator = true;
