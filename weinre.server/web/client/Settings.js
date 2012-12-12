@@ -85,14 +85,17 @@ WebInspector.Settings.prototype = {
         if (key in this)
             return;
 
-        Object.defineProperty(this, key, this._get.bind(this, key, defaultValue));
-        Object.defineProperty(this, key, this._set.bind(this, key));
+        Object.defineProperty(this, key,{
+            get : this._get.bind(this, key, defaultValue),
+            set : this._set.bind(this, key)});
     },
 
     installProjectSetting: function(key, defaultValue)
     {
-        Object.defineProperty(this, key, this._getProjectSetting.bind(this, key, defaultValue));
-        Object.defineProperty(this, key, this._setProjectSetting.bind(this, key));
+        Object.defineProperty(this, key,{
+            get : this._getProjectSetting.bind(this, key, defaultValue),
+            set : this._setProjectSetting.bind(this, key)});
+
     },
 
     inspectedURLChanged: function(url)
@@ -160,4 +163,4 @@ WebInspector.Settings.prototype = {
     }
 }
 
-WebInspector.Settings.prototype.__proto__ = WebInspector.Object.prototype;
+crossExtend(WebInspector.Settings, WebInspector.Object);

@@ -69,7 +69,7 @@ WebInspector.WatchExpressionsSidebarPane.prototype = {
     }
 }
 
-WebInspector.WatchExpressionsSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+crossExtend(WebInspector.WatchExpressionsSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.WatchExpressionsSection = function()
 {
@@ -186,7 +186,7 @@ WebInspector.WatchExpressionsSection.prototype = {
     }
 }
 
-WebInspector.WatchExpressionsSection.prototype.__proto__ = WebInspector.ObjectPropertiesSection.prototype;
+crossExtend(WebInspector.WatchExpressionsSection, WebInspector.ObjectPropertiesSection);
 
 WebInspector.WatchExpressionsSection.CompareProperties = function(propertyA, propertyB) 
 {
@@ -268,4 +268,4 @@ WebInspector.WatchExpressionTreeElement.prototype = {
     }
 }
 
-WebInspector.WatchExpressionTreeElement.prototype.__proto__ = WebInspector.ObjectPropertyTreeElement.prototype;
+crossExtend(WebInspector.WatchExpressionTreeElement, WebInspector.ObjectPropertyTreeElement);

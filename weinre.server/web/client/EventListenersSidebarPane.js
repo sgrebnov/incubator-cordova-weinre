@@ -114,7 +114,7 @@ WebInspector.EventListenersSidebarPane.prototype = {
     }
 }
 
-WebInspector.EventListenersSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+crossExtend(WebInspector.EventListenersSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.EventListenersSection = function(title, nodeId)
 {
@@ -161,7 +161,7 @@ WebInspector.EventListenersSection.prototype = {
     }
 }
 
-WebInspector.EventListenersSection.prototype.__proto__ = WebInspector.PropertiesSection.prototype;
+crossExtend(WebInspector.EventListenersSection, WebInspector.PropertiesSection);
 
 WebInspector.EventListenerBar = function(eventListener, nodeId)
 {
@@ -232,4 +232,4 @@ WebInspector.EventListenerBar.prototype = {
     }
 }
 
-WebInspector.EventListenerBar.prototype.__proto__ = WebInspector.ObjectPropertiesSection.prototype;
+crossExtend(WebInspector.EventListenerBar, WebInspector.ObjectPropertiesSection);

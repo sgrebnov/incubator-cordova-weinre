@@ -31,10 +31,9 @@
 WebInspector.ElementsTreeOutline = function() {
     this.element = document.createElement("ol");
 
-    // TODO IE
-//    this.element.addEventListener("mousedown", this._onmousedown.bind(this), false);
-//    this.element.addEventListener("mousemove", this._onmousemove.bind(this), false);
-//    this.element.addEventListener("mouseout", this._onmouseout.bind(this), false);
+    this.element.addEventListener("mousedown", this._onmousedown.bind(this), false);
+    this.element.addEventListener("mousemove", this._onmousemove.bind(this), false);
+    this.element.addEventListener("mouseout", this._onmouseout.bind(this), false);
 
     TreeOutline.call(this, this.element);
 
@@ -43,8 +42,8 @@ WebInspector.ElementsTreeOutline = function() {
     this.showInElementsPanelEnabled = false;
     this.rootDOMNode = null;
     this.focusedDOMNode = null;
-    // TODO IE
-    //this.element.addEventListener("contextmenu", this._contextMenuEventFired.bind(this), true);
+
+    this.element.addEventListener("contextmenu", this._contextMenuEventFired.bind(this), true);
 }
 
 WebInspector.ElementsTreeOutline.prototype = {
@@ -294,7 +293,7 @@ WebInspector.ElementsTreeOutline.prototype = {
     }
 }
 
-WebInspector.ElementsTreeOutline.prototype.__proto__ = TreeOutline.prototype;
+crossExtend(WebInspector.ElementsTreeOutline, TreeOutline);
 
 WebInspector.ElementsTreeElement = function(node, elementCloseTag)
 {
@@ -1439,4 +1438,4 @@ WebInspector.ElementsTreeElement.prototype = {
     }
 }
 
-WebInspector.ElementsTreeElement.prototype.__proto__ = TreeElement.prototype;
+crossExtend(WebInspector.ElementsTreeElement, TreeElement);

@@ -63,4 +63,4 @@ WebInspector.PropertiesSidebarPane.prototype = {
     }
 }
 
-WebInspector.PropertiesSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+crossExtend(WebInspector.PropertiesSidebarPane, WebInspector.SidebarPane);

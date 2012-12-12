@@ -83,4 +83,4 @@ WebInspector.ConsolePanel.prototype = {
     }
 }
 
-WebInspector.ConsolePanel.prototype.__proto__ = WebInspector.Panel.prototype;
+crossExtend(WebInspector.ConsolePanel, WebInspector.Panel);

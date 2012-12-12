@@ -212,10 +212,10 @@ var WebInspector = {
         var hiddenPanels = (InspectorFrontendHost.hiddenPanels() || "").split(',');
         if (hiddenPanels.indexOf("elements") === -1)
             this.panels.elements = new WebInspector.ElementsPanel();
-//        if (hiddenPanels.indexOf("resources") === -1)
-//            this.panels.resources = new WebInspector.ResourcesPanel();
-//        if (hiddenPanels.indexOf("network") === -1)
-//            this.panels.network = new WebInspector.NetworkPanel();
+        if (hiddenPanels.indexOf("resources") === -1)
+            this.panels.resources = new WebInspector.ResourcesPanel();
+        if (hiddenPanels.indexOf("network") === -1)
+            this.panels.network = new WebInspector.NetworkPanel();
 //        if (hiddenPanels.indexOf("scripts") === -1)
 //            this.panels.scripts = new WebInspector.ScriptsPanel();
 //        if (hiddenPanels.indexOf("timeline") === -1)

@@ -981,7 +981,7 @@ WebInspector.DataGrid.prototype = {
     CenterResizerOverBorderAdjustment: 3,
 }
 
-WebInspector.DataGrid.prototype.__proto__ = WebInspector.Object.prototype;
+crossExtend(WebInspector.DataGrid, WebInspector.Object);
 
 WebInspector.DataGridNode = function(data, hasChildren)
 {
@@ -1459,7 +1459,7 @@ WebInspector.DataGridNode.prototype = {
     }
 }
 
-WebInspector.DataGridNode.prototype.__proto__ = WebInspector.Object.prototype;
+crossExtend(WebInspector.DataGridNode, WebInspector.Object);
 
 WebInspector.CreationDataGridNode = function(data, hasChildren)
 {
@@ -1475,4 +1475,4 @@ WebInspector.CreationDataGridNode.prototype = {
     }
 }
 
-WebInspector.CreationDataGridNode.prototype.__proto__ = WebInspector.DataGridNode.prototype;
+crossExtend(WebInspector.CreationDataGridNode, WebInspector.DataGridNode);

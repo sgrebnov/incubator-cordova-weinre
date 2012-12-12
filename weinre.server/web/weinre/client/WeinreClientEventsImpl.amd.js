@@ -61,7 +61,9 @@ module.exports = WeinreClientEventsImpl = (function() {
       return;
     }
     WebInspector.panels.elements.reset();
-    WebInspector.panels.timeline._clearPanel();
+
+   // TODO IE
+   // WebInspector.panels.timeline._clearPanel();
     WebInspector.panels.resources.reset();
     target = WebInspector.panels.remote.getTarget(targetChannel);
     if (!target) {

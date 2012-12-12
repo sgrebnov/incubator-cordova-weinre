@@ -564,7 +564,7 @@ WebInspector.StylesSidebarPane.prototype = {
     }
 }
 
-WebInspector.StylesSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+crossExtend(WebInspector.StylesSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.ComputedStyleSidebarPane = function()
 {
@@ -589,7 +589,7 @@ WebInspector.ComputedStyleSidebarPane = function()
     showInheritedCheckbox.addEventListener(showInheritedToggleFunction.bind(this));
 }
 
-WebInspector.ComputedStyleSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+crossExtend(WebInspector.ComputedStyleSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.StylePropertiesSection = function(styleRule, editable, isInherited, isFirstSection)
 {
@@ -968,7 +968,7 @@ WebInspector.StylePropertiesSection.prototype = {
     }
 }
 
-WebInspector.StylePropertiesSection.prototype.__proto__ = WebInspector.PropertiesSection.prototype;
+crossExtend(WebInspector.StylePropertiesSection, WebInspector.PropertiesSection);
 
 WebInspector.ComputedStylePropertiesSection = function(styleRule, usedProperties, disabledComputedProperties)
 {
@@ -1068,7 +1068,7 @@ WebInspector.ComputedStylePropertiesSection.prototype = {
     }
 }
 
-WebInspector.ComputedStylePropertiesSection.prototype.__proto__ = WebInspector.PropertiesSection.prototype;
+crossExtend(WebInspector.ComputedStylePropertiesSection, WebInspector.PropertiesSection);
 
 WebInspector.BlankStylePropertiesSection = function(defaultSelectorText)
 {
@@ -1119,7 +1119,7 @@ WebInspector.BlankStylePropertiesSection.prototype = {
     }
 }
 
-WebInspector.BlankStylePropertiesSection.prototype.__proto__ = WebInspector.StylePropertiesSection.prototype;
+crossExtend(WebInspector.BlankStylePropertiesSection, WebInspector.StylePropertiesSection);
 
 WebInspector.StylePropertyTreeElement = function(styleRule, style, property, shorthand, inherited, overloaded)
 {
@@ -1534,7 +1534,7 @@ WebInspector.StylePropertyTreeElement.prototype = {
             expanded: this.expanded,
             hasChildren: this.hasChildren,
             keyDownListener: isEditingName ? null : this.editingValueKeyDown.bind(this),
-            isEditingName: isEditingName,
+            isEditingName: isEditingName
         };
 
         // Lie about our children to prevent expanding on double click and to collapse shorthands.
@@ -1900,7 +1900,7 @@ WebInspector.StylePropertyTreeElement.prototype = {
     }
 }
 
-WebInspector.StylePropertyTreeElement.prototype.__proto__ = TreeElement.prototype;
+crossExtend(WebInspector.StylePropertyTreeElement, TreeElement);
 
 WebInspector.StylesSidebarPane.CSSPropertyPrompt = function(element, cssCompletions)
 {
@@ -1972,4 +1972,4 @@ WebInspector.StylesSidebarPane.CSSPropertyPrompt.prototype = {
     }
 }
 
-WebInspector.StylesSidebarPane.CSSPropertyPrompt.prototype.__proto__ = WebInspector.TextPrompt.prototype;
+crossExtend(WebInspector.StylesSidebarPane.CSSPropertyPrompt, WebInspector.TextPrompt);

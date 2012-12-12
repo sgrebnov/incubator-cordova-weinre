@@ -768,7 +768,7 @@ WebInspector.ResourcesPanel.prototype = {
     }
 }
 
-WebInspector.ResourcesPanel.prototype.__proto__ = WebInspector.Panel.prototype;
+crossExtend(WebInspector.ResourcesPanel, WebInspector.Panel);
 
 WebInspector.BaseStorageTreeElement = function(storagePanel, representedObject, title, iconClass, hasChildren)
 {
@@ -834,7 +834,7 @@ WebInspector.BaseStorageTreeElement.prototype = {
     }
 }
 
-WebInspector.BaseStorageTreeElement.prototype.__proto__ = TreeElement.prototype;
+crossExtend(WebInspector.BaseStorageTreeElement, TreeElement);
 
 WebInspector.StorageCategoryTreeElement = function(storagePanel, categoryName, settingsKey, iconClass)
 {
@@ -873,7 +873,7 @@ WebInspector.StorageCategoryTreeElement.prototype = {
         WebInspector.settings[this._expandedSettingKey] = false;
     }
 }
-WebInspector.StorageCategoryTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.StorageCategoryTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.FrameTreeElement = function(storagePanel, frameId, title, subtitle)
 {
@@ -944,7 +944,7 @@ WebInspector.FrameTreeElement.prototype = {
         }
     }
 }
-WebInspector.FrameTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.FrameTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.FrameResourceTreeElement = function(storagePanel, resource)
 {
@@ -1075,7 +1075,7 @@ WebInspector.FrameResourceTreeElement.prototype = {
     }
 }
 
-WebInspector.FrameResourceTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.FrameResourceTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.DatabaseTreeElement = function(storagePanel, database)
 {
@@ -1116,7 +1116,7 @@ WebInspector.DatabaseTreeElement.prototype = {
     }
 
 }
-WebInspector.DatabaseTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.DatabaseTreeElement,  WebInspector.BaseStorageTreeElement);
 
 WebInspector.DatabaseTableTreeElement = function(storagePanel, database, tableName)
 {
@@ -1137,7 +1137,7 @@ WebInspector.DatabaseTableTreeElement.prototype = {
         this._storagePanel.showDatabase(this._database, this._tableName);
     }
 }
-WebInspector.DatabaseTableTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.DatabaseTableTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.DOMStorageTreeElement = function(storagePanel, domStorage, className)
 {
@@ -1157,7 +1157,7 @@ WebInspector.DOMStorageTreeElement.prototype = {
         this._storagePanel.showDOMStorage(this._domStorage);
     }
 }
-WebInspector.DOMStorageTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.DOMStorageTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.CookieTreeElement = function(storagePanel, cookieDomain)
 {
@@ -1177,7 +1177,7 @@ WebInspector.CookieTreeElement.prototype = {
         this._storagePanel.showCookies(this, this._cookieDomain);
     }
 }
-WebInspector.CookieTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.CookieTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.ApplicationCacheTreeElement = function(storagePanel, appcacheDomain)
 {
@@ -1197,7 +1197,7 @@ WebInspector.ApplicationCacheTreeElement.prototype = {
         this._storagePanel.showApplicationCache(this, this._appcacheDomain);
     }
 }
-WebInspector.ApplicationCacheTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.ApplicationCacheTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.ResourceRevisionTreeElement = function(storagePanel, revision)
 {
@@ -1238,7 +1238,7 @@ WebInspector.ResourceRevisionTreeElement.prototype = {
     }
 }
 
-WebInspector.ResourceRevisionTreeElement.prototype.__proto__ = WebInspector.BaseStorageTreeElement.prototype;
+crossExtend(WebInspector.ResourceRevisionTreeElement, WebInspector.BaseStorageTreeElement);
 
 WebInspector.StorageCategoryView = function()
 {
@@ -1258,4 +1258,4 @@ WebInspector.StorageCategoryView.prototype = {
     }
 }
 
-WebInspector.StorageCategoryView.prototype.__proto__ = WebInspector.View.prototype;
+crossExtend(WebInspector.StorageCategoryView, WebInspector.View);
