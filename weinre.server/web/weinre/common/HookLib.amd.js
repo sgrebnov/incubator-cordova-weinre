@@ -64,7 +64,7 @@ HookSite = (function() {
     this.target = object[property];
     this.hookss = [];
     if (typeof this.target === 'undefined') {
-      console.log("Unable to hook " + property);
+      return;
     } else {
       hookedFunction = getHookedFunction(this.target, this);
       object[property] = hookedFunction;

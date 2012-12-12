@@ -236,7 +236,7 @@ module.exports = CSSStore = (function() {
         name = styleDecl.item(i);
         property.name = name;
         property.priority = styleDecl.getPropertyPriority(name);
-        property.implicit = typeof styleDecl.isPropertyImplicit !== "undefined" ? styleDecl.isPropertyImplicit : true;
+        property.implicit = typeof styleDecl.isPropertyImplicit !== "undefined" ? styleDecl.isPropertyImplicit(name) : true;
         property.shorthandName = typeof styleDecl.getPropertyShorthand !== "undefined" ? styleDecl.getPropertyShorthand(name) || "" : "";
         property.status = (property.shorthandName ? "style" : "active");
         property.parsedOk = true;

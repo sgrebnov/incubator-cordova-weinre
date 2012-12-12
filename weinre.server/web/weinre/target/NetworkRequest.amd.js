@@ -51,7 +51,13 @@ module.exports = NetworkRequest = (function() {
 
   NetworkRequest.prototype.handleDone = function() {
     var description, sourceString, status, statusText, success, time;
-    sourceString = this.xhr.responseText;
+    // TODO IE
+    sourceString = "";
+    try {
+      sourceString = this.xhr.responseText;
+    } catch (e) {
+
+    }
     Weinre.wi.NetworkNotify.setInitialContent(this.id, sourceString, "XHR");
     time = Date.now() / 1000.0;
     status = this.xhr.status;
@@ -192,13 +198,17 @@ getXhrEventHandler = function(xhr) {
     if (!nr) {
       return;
     }
-    switch (xhr.readyState) {
-      case 2:
-        return nr.handleHeadersReceived();
-      case 3:
-        return nr.handleLoading();
-      case 4:
-        return nr.handleDone();
+    try {
+      switch (xhr.readyState) {
+        case 2:
+          return nr.handleHeadersReceived();
+        case 3:
+          return nr.handleLoading();
+        case 4:
+          return nr.handleDone();
+      }
+    } catch (e) {
+
     }
   };
 };

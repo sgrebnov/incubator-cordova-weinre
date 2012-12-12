@@ -44,9 +44,11 @@ module.exports = Console = (function() {
 
   function Console() {}
 
-  Console.prototype.original = function() {
-    return OriginalConsole;
-  };
+  Object.defineProperty(Console, 'original', {
+    get: function() {
+      return OriginalConsole;
+    }
+  });
 
   Console.useRemote = function(value) {
     var oldValue;

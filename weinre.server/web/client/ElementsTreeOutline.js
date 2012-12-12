@@ -30,7 +30,6 @@
 
 WebInspector.ElementsTreeOutline = function() {
     this.element = document.createElement("ol");
-
     this.element.addEventListener("mousedown", this._onmousedown.bind(this), false);
     this.element.addEventListener("mousemove", this._onmousemove.bind(this), false);
     this.element.addEventListener("mouseout", this._onmouseout.bind(this), false);

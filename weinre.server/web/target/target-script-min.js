@@ -520,7 +520,7 @@ this.property = property;
 this.target = object[property];
 this.hookss = [];
 if (typeof this.target === 'undefined') {
-console.log("Unable to hook " + property);
+return;
 } else {
 hookedFunction = getHookedFunction(this.target, this);
 object[property] = hookedFunction;
@@ -1368,32 +1368,28 @@ require("../common/MethodNamer").setNamesForClass(module.exports);
 ;
 // weinre/target/BrowserHacks.amd.js
 ;modjewel.define("weinre/target/BrowserHacks", function(require, exports, module) { 
-var BrowsersHacks;
-module.exports = BrowsersHacks = (function() {
-var internetExplorerHacks;
-function BrowsersHacks() {}
-BrowsersHacks.apply = function() {
-var isIE;
-isIE = window.navigator.userAgent.indexOf("MSIE") !== -1;
-if (isIE) {
-return internetExplorerHacks();
-}
-};
-internetExplorerHacks = function() {
+var BrowserHacks;
+BrowserHacks = function() {
 if (typeof document.addEventListener === "undefined") {
 alert("Oops. It seems the page runs in compatibility mode. Please fix it and try again.");
-}
 return;
+}
 if (typeof window.Element === "undefined") {
 window.Element = function() {};
 }
 if (typeof window.Node === "undefined") {
-return window.Node = function() {};
+window.Node = function() {};
+}
+if (!Object.getPrototypeOf) {
+Object.getPrototypeOf = function(object) {
+if (!object.__proto__) {
+throw new Error("This vm does not support __proto__ and getPrototypeOf. Script requires any of them to operate correctly.");
+}
+return object.__proto__;
+};
 }
 };
-return BrowsersHacks;
-})();
-require("../common/MethodNamer").setNamesForClass(module.exports);
+BrowserHacks();
 });
 
 ;
@@ -1466,9 +1462,11 @@ Debug: 4
 };
 module.exports = Console = (function() {
 function Console() {}
-Console.prototype.original = function() {
+Object.defineProperty(Console, 'original', {
+get: function() {
 return OriginalConsole;
-};
+}
+});
 Console.useRemote = function(value) {
 var oldValue;
 if (arguments.length === 0) {
@@ -1791,7 +1789,7 @@ property = {};
 name = styleDecl.item(i);
 property.name = name;
 property.priority = styleDecl.getPropertyPriority(name);
-property.implicit = typeof styleDecl.isPropertyImplicit !== "undefined" ? styleDecl.isPropertyImplicit : true;
+property.implicit = typeof styleDecl.isPropertyImplicit !== "undefined" ? styleDecl.isPropertyImplicit(name) : true;
 property.shorthandName = typeof styleDecl.getPropertyShorthand !== "undefined" ? styleDecl.getPropertyShorthand(name) || "" : "";
 property.status = (property.shorthandName ? "style" : "active");
 property.parsedOk = true;
@@ -2846,7 +2844,11 @@ return Weinre.wi.NetworkNotify.didReceiveResponse(this.id, time, "XHR", response
 NetworkRequest.prototype.handleLoading = function() {};
 NetworkRequest.prototype.handleDone = function() {
 var description, sourceString, status, statusText, success, time;
+sourceString = "";
+try {
 sourceString = this.xhr.responseText;
+} catch (e) {
+}
 Weinre.wi.NetworkNotify.setInitialContent(this.id, sourceString, "XHR");
 time = Date.now() / 1000.0;
 status = this.xhr.status;
@@ -2977,6 +2979,7 @@ nr = xhr.__weinreNetworkRequest__;
 if (!nr) {
 return;
 }
+try {
 switch (xhr.readyState) {
 case 2:
 return nr.handleHeadersReceived();
@@ -2984,6 +2987,8 @@ case 3:
 return nr.handleLoading();
 case 4:
 return nr.handleDone();
+}
+} catch (e) {
 }
 };
 };
@@ -3307,7 +3312,7 @@ require("../common/MethodNamer").setNamesForClass(module.exports);
 // weinre/target/Target.amd.js
 ;modjewel.define("weinre/target/Target", function(require, exports, module) { 
 var Binding, CSSStore, Callback, CheckForProblems, ElementHighlighter, Ex, HookLib, InjectedScriptHostImpl, MessageDispatcher, NetworkRequest, NodeStore, Target, Weinre, WeinreExtraClientCommandsImpl, WeinreTargetEventsImpl, WiCSSImpl, WiConsoleImpl, WiDOMImpl, WiDOMStorageImpl, WiDatabaseImpl, WiInspectorImpl, WiRuntimeImpl, currentTime;
-require('./BrowserHacks').apply();
+require('./BrowserHacks');
 Ex = require('../common/Ex');
 Binding = require('../common/Binding');
 Callback = require('../common/Callback');

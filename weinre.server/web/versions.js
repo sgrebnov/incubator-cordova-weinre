@@ -20,6 +20,6 @@
  if (typeof Weinre == "undefined") Weinre = {};
 
  Weinre.Versions = {
-    weinre:   "2.0.0-pre-H7THK38E-incubating",
-    build:    "H7THK38E",
+    weinre:   "2.0.0-pre-HAMENZHC-incubating",
+    build:    "HAMENZHC",
  };
