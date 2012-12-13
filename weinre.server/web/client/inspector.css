@@ -44,6 +44,7 @@ body {
     margin: 0;
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 * {
@@ -528,6 +529,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     overflow-y: overlay;
     word-wrap: break-word;
     -webkit-user-select: text;
+	-ms-user-select: text;
     -webkit-text-size-adjust: auto;
 }
 
@@ -572,6 +574,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     height: 10px;
     margin-top: -5px;
     -webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .console-message .bubble {
@@ -770,6 +773,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
 .auto-complete-text, .editing .auto-complete-text {
     color: rgb(128, 128, 128) !important;
     -webkit-user-select: none;
+	-ms-user-select: none;
     -webkit-user-modify: read-only;
 }
 
@@ -830,6 +834,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     padding-bottom: 10px;
     font-size: 11px;
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .resource-view.image img.resource-image-view {
@@ -838,6 +843,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     background-image: url(Images/checker.png);
     -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     -webkit-user-select: text;
+	-ms-user-select: text;
     -webkit-user-drag: auto;
 }
 
@@ -1286,6 +1292,7 @@ body.inactive .placard.selected {
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-user-select: text;
+	-ms-user-select: text;
     cursor: auto;
 }
 
@@ -1302,6 +1309,7 @@ body.inactive .placard.selected {
     margin-top: 0;
     padding-right: 3px;
     -webkit-user-select: none;
+	-ms-user-select: none;
     cursor: default;
 }
 
@@ -1394,6 +1402,7 @@ body.inactive .placard.selected {
 
 .editing {
     -webkit-user-select: text;
+	-ms-user-select: text;
     -webkit-box-shadow: rgba(0, 0, 0, .5) 3px 3px 4px;
     outline: 1px solid rgb(66%, 66%, 66%) !important;
     background-color: white;
@@ -1425,6 +1434,7 @@ body.inactive .placard.selected {
 
 .elements-tree-editor {
     -webkit-user-select: text;
+	-ms-user-select: text;
     -webkit-user-modify: read-write-plaintext-only;
 }
 
@@ -2026,6 +2036,7 @@ li.selected .base-storage-tree-element-subtitle {
     white-space: nowrap;
     border-right: 1px solid #aaa;
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .data-grid td > div, .data-grid th > div {
@@ -2102,6 +2113,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
     height: 8px;
     margin-right: 2px;
     -webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .data-grid tr.expanded td.disclosure::before {
@@ -2156,6 +2168,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
     white-space: pre-wrap;
     -webkit-user-modify: read-write-plaintext-only;
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .database-user-query::before, .database-query-prompt::before, .database-query-result::before {
@@ -2168,6 +2181,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
     height: 10px;
     margin-top: -5px;
     -webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .database-query-prompt::before {
@@ -2188,6 +2202,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
 .database-query-text {
     color: rgb(0, 128, 255);
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .database-query-result {
@@ -2201,6 +2216,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
 .database-query-result.error {
     color: red;
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .database-query-result.error::before {
@@ -3773,6 +3789,7 @@ body.inactive li.selected .bubble.search-matches {
 
 .timeline-details {
     -webkit-user-select: text;
+	-ms-user-select: text;
     vertical-align: top;
 }
 
@@ -4130,6 +4147,7 @@ a.worker-item {
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
     -webkit-user-select: text;
+	-ms-user-select: text;
 }
 
 .styles-section:not(.first-styles-section) {
@@ -4154,6 +4172,7 @@ a.worker-item {
     padding-right: 5px;
     vertical-align: sub;
     -webkit-user-select: none;
+	-ms-user-select: none;
     cursor: default;
 }
 
@@ -4236,6 +4255,7 @@ a.worker-item {
     margin-top: 0;
     padding-right: 3px;
     -webkit-user-select: none;
+	-ms-user-select: none;
     cursor: default;
 }
 

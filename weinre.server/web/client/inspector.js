@@ -1732,6 +1732,7 @@ WebInspector.startEditing = function(element, config)
     var moveDirection = "";
 
     element.addStyleClass("editing");
+    element.setAttribute("contenteditable", "true");
 
     var oldTabIndex = element.tabIndex;
     if (element.tabIndex < 0)
@@ -1753,6 +1754,8 @@ WebInspector.startEditing = function(element, config)
         delete WebInspector.__editing;
 
         this.removeStyleClass("editing");
+        this.removeAttribute("contenteditable");
+
         this.tabIndex = oldTabIndex;
         this.scrollTop = 0;
         this.scrollLeft = 0;

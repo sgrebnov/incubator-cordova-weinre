@@ -59,3 +59,7 @@
 if (!HTMLElement.prototype.scrollIntoViewIfNeeded){
     HTMLElement.prototype.scrollIntoViewIfNeeded = HTMLElement.prototype.scrollIntoView;
 }
+
+if (!Selection.prototype.setBaseAndExtent){
+    Selection.prototype.setBaseAndExtent = Selection.prototype.selectAllChildren;
+}

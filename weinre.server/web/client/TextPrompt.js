@@ -118,6 +118,11 @@ WebInspector.TextPrompt.prototype = {
                 break;
         }
 
+        if (event.keyCode == 13 || event.charCode == 13) {
+            handled = true;
+            event.target.blur();
+        }
+
         handled |= event.handled;
         if (handled) {
             event.handled = true;
