@@ -71,4 +71,4 @@ WebInspector.View.prototype = {
     }
 }
 
-WebInspector.View.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.View, WebInspector.Object);

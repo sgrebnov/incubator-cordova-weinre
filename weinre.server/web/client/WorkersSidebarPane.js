@@ -92,7 +92,7 @@ WebInspector.WorkersSidebarPane.prototype = {
     }
 };
 
-WebInspector.WorkersSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.WorkersSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.Worker = function(id, url, shared)
 {

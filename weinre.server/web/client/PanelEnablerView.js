@@ -99,4 +99,4 @@ WebInspector.PanelEnablerView.prototype = {
     }
 }
 
-WebInspector.PanelEnablerView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.PanelEnablerView, WebInspector.View);

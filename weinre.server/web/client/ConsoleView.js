@@ -658,7 +658,7 @@ WebInspector.ConsoleView.prototype = {
     }
 }
 
-WebInspector.ConsoleView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ConsoleView, WebInspector.View);
 
 WebInspector.ConsoleMessage = function(source, type, level, line, url, repeatCount, message, parameters, stackTrace, requestId)
 {
@@ -1100,7 +1100,7 @@ WebInspector.ConsoleCommandResult.prototype = {
     }
 }
 
-WebInspector.ConsoleCommandResult.prototype.__proto__ = WebInspector.ConsoleMessage.prototype;
+extend(WebInspector.ConsoleCommandResult, WebInspector.ConsoleMessage);
 
 WebInspector.ConsoleGroup = function(parentGroup)
 {

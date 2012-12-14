@@ -353,7 +353,7 @@ WebInspector.Drawer.prototype = {
     }
 }
 
-WebInspector.Drawer.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.Drawer, WebInspector.View);
 
 WebInspector.Drawer.State = {
     Hidden: 0,

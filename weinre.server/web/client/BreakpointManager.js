@@ -320,7 +320,7 @@ WebInspector.BreakpointManager.prototype = {
     }
 }
 
-WebInspector.BreakpointManager.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.BreakpointManager, WebInspector.Object);
 
 WebInspector.DOMBreakpoint = function(node, type)
 {
@@ -446,7 +446,7 @@ WebInspector.NativeBreakpointView.prototype = {
     }
 }
 
-WebInspector.NativeBreakpointView.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.NativeBreakpointView, WebInspector.Object);
 
 WebInspector.DOMBreakpointView = function(manager, id, enabled, node, type)
 {
@@ -509,7 +509,7 @@ WebInspector.DOMBreakpointView.prototype = {
     }
 }
 
-WebInspector.DOMBreakpointView.prototype.__proto__ = WebInspector.NativeBreakpointView.prototype;
+extend(WebInspector.DOMBreakpointView, WebInspector.NativeBreakpointView);
 
 WebInspector.EventListenerBreakpointView = function(manager, id, enabled, eventName)
 {
@@ -557,7 +557,7 @@ WebInspector.EventListenerBreakpointView.prototype = {
     }
 }
 
-WebInspector.EventListenerBreakpointView.prototype.__proto__ = WebInspector.NativeBreakpointView.prototype;
+extend(WebInspector.EventListenerBreakpointView, WebInspector.NativeBreakpointView);
 
 WebInspector.XHRBreakpointView = function(manager, id, enabled, url)
 {
@@ -594,7 +594,7 @@ WebInspector.XHRBreakpointView.prototype = {
     }
 }
 
-WebInspector.XHRBreakpointView.prototype.__proto__ = WebInspector.NativeBreakpointView.prototype;
+extend(WebInspector.XHRBreakpointView, WebInspector.NativeBreakpointView);
 
 WebInspector.DOMBreakpointTypes = {
     SubtreeModified: 0,

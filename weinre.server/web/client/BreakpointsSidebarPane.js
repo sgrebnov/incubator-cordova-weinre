@@ -242,7 +242,7 @@ WebInspector.JavaScriptBreakpointsSidebarPane.prototype = {
     }
 }
 
-WebInspector.JavaScriptBreakpointsSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.JavaScriptBreakpointsSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.NativeBreakpointsSidebarPane = function(title)
 {
@@ -323,7 +323,7 @@ WebInspector.NativeBreakpointsSidebarPane.prototype = {
     }
 }
 
-WebInspector.NativeBreakpointsSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.NativeBreakpointsSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.XHRBreakpointsSidebarPane = function()
 {
@@ -387,7 +387,7 @@ WebInspector.XHRBreakpointsSidebarPane.prototype = {
     }
 }
 
-WebInspector.XHRBreakpointsSidebarPane.prototype.__proto__ = WebInspector.NativeBreakpointsSidebarPane.prototype;
+extend(WebInspector.XHRBreakpointsSidebarPane, WebInspector.NativeBreakpointsSidebarPane);
 
 WebInspector.BreakpointItem = function(breakpoint)
 {
@@ -470,7 +470,7 @@ WebInspector.BreakpointItem.prototype = {
     }
 }
 
-WebInspector.BreakpointItem.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.BreakpointItem, WebInspector.Object);
 
 WebInspector.EventListenerBreakpointsSidebarPane = function()
 {
@@ -620,4 +620,4 @@ WebInspector.EventListenerBreakpointsSidebarPane.prototype = {
     }
 }
 
-WebInspector.EventListenerBreakpointsSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.EventListenerBreakpointsSidebarPane, WebInspector.SidebarPane);

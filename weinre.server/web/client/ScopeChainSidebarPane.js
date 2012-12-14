@@ -101,7 +101,7 @@ WebInspector.ScopeChainSidebarPane.prototype = {
     }
 }
 
-WebInspector.ScopeChainSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.ScopeChainSidebarPane, WebInspector.SidebarPane);
 
 WebInspector.ScopeVariableTreeElement = function(property)
 {
@@ -156,4 +156,4 @@ WebInspector.ScopeVariableTreeElement.prototype = {
     }
 }
 
-WebInspector.ScopeVariableTreeElement.prototype.__proto__ = WebInspector.ObjectPropertyTreeElement.prototype;
+extend(WebInspector.ScopeVariableTreeElement, WebInspector.ObjectPropertyTreeElement);

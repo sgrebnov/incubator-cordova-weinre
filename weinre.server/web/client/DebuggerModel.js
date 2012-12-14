@@ -317,7 +317,7 @@ WebInspector.DebuggerModel.prototype = {
     }
 }
 
-WebInspector.DebuggerModel.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.DebuggerModel, WebInspector.Object);
 
 WebInspector.DebuggerEventTypes = {
     JavaScriptPause: 0,

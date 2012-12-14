@@ -745,4 +745,4 @@ WebInspector.Resource.prototype = {
     }
 }
 
-WebInspector.Resource.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.Resource, WebInspector.Object);

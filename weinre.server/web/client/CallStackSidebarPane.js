@@ -193,4 +193,4 @@ WebInspector.CallStackSidebarPane.prototype = {
     }
 }
 
-WebInspector.CallStackSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.CallStackSidebarPane, WebInspector.SidebarPane);
