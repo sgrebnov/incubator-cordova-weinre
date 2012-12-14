@@ -641,8 +641,6 @@ WebInspector.TimelinePanel.prototype = {
     }
 }
 
-WebInspector.TimelinePanel.prototype.__proto__ = WebInspector.Panel.prototype;
-
 WebInspector.TimelineDispatcher = function(timelinePanel)
 {
     this._timelinePanel = timelinePanel;
@@ -1176,3 +1174,5 @@ WebInspector.TimelineExpandableElement.prototype = {
         this._element.parentElement.removeChild(this._element);
     }
 }
+
+extend(WebInspector.TimelinePanel, WebInspector.Panel);

@@ -61,8 +61,6 @@ WebInspector.SidebarSectionTreeElement.prototype = {
     }
 }
 
-WebInspector.SidebarSectionTreeElement.prototype.__proto__ = TreeElement.prototype;
-
 WebInspector.SidebarTreeElement = function(className, title, subtitle, representedObject, hasChildren)
 {
     TreeElement.call(this, "", representedObject || {}, hasChildren);
@@ -200,4 +198,5 @@ WebInspector.SidebarTreeElement.prototype = {
     }
 }
 
-WebInspector.SidebarTreeElement.prototype.__proto__ = TreeElement.prototype;
+extend(WebInspector.SidebarTreeElement, TreeElement);
+extend(WebInspector.SidebarSectionTreeElement, TreeElement);

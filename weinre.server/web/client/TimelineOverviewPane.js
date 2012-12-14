@@ -357,9 +357,6 @@ WebInspector.TimelineOverviewPane.prototype = {
 
 }
 
-WebInspector.TimelineOverviewPane.prototype.__proto__ = WebInspector.Object.prototype;
-
-
 WebInspector.TimelineOverviewCalculator = function()
 {
 }
@@ -598,3 +595,5 @@ WebInspector.HeapGraph.prototype = {
 
     _forAllRecords: WebInspector.TimelineOverviewPane.prototype._forAllRecords
 }
+
+extend(WebInspector.TimelineOverviewPane, WebInspector.Object);
