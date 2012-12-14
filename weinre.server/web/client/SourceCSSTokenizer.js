@@ -1420,4 +1420,4 @@ case 142:
     }
 }
 
-WebInspector.SourceCSSTokenizer.prototype.__proto__ = WebInspector.SourceTokenizer.prototype;
+extend(WebInspector.SourceCSSTokenizer, WebInspector.SourceTokenizer);

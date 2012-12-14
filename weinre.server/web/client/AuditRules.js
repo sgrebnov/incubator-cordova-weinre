@@ -114,8 +114,7 @@ WebInspector.AuditRules.GzipRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.GzipRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.GzipRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CombineExternalResourcesRule = function(id, name, type, resourceTypeName, allowedPerDomain)
 {
@@ -149,22 +148,19 @@ WebInspector.AuditRules.CombineExternalResourcesRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.CombineExternalResourcesRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.CombineExternalResourcesRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CombineJsResourcesRule = function(allowedPerDomain) {
     WebInspector.AuditRules.CombineExternalResourcesRule.call(this, "page-externaljs", "Combine external JavaScript", WebInspector.Resource.Type.Script, "JavaScript", allowedPerDomain);
 }
 
-WebInspector.AuditRules.CombineJsResourcesRule.prototype.__proto__ = WebInspector.AuditRules.CombineExternalResourcesRule.prototype;
-
+extend(WebInspector.AuditRules.CombineJsResourcesRule, WebInspector.AuditRules.CombineExternalResourcesRule);
 
 WebInspector.AuditRules.CombineCssResourcesRule = function(allowedPerDomain) {
     WebInspector.AuditRules.CombineExternalResourcesRule.call(this, "page-externalcss", "Combine external CSS", WebInspector.Resource.Type.Stylesheet, "CSS", allowedPerDomain);
 }
 
-WebInspector.AuditRules.CombineCssResourcesRule.prototype.__proto__ = WebInspector.AuditRules.CombineExternalResourcesRule.prototype;
-
+extend(WebInspector.AuditRules.CombineCssResourcesRule, WebInspector.AuditRules.CombineExternalResourcesRule);
 
 WebInspector.AuditRules.MinimizeDnsLookupsRule = function(hostCountThreshold) {
     WebInspector.AuditRule.call(this, "network-minimizelookups", "Minimize DNS lookups");
@@ -195,8 +191,7 @@ WebInspector.AuditRules.MinimizeDnsLookupsRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.MinimizeDnsLookupsRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.MinimizeDnsLookupsRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.ParallelizeDownloadRule = function(optimalHostnameCount, minRequestThreshold, minBalanceThreshold)
 {
@@ -263,8 +258,7 @@ WebInspector.AuditRules.ParallelizeDownloadRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.ParallelizeDownloadRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.ParallelizeDownloadRule, WebInspector.AuditRule);
 
 // The reported CSS rule size is incorrect (parsed != original in WebKit),
 // so use percentages instead, which gives a better approximation.
@@ -387,8 +381,7 @@ WebInspector.AuditRules.UnusedCssRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.UnusedCssRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.UnusedCssRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CacheControlRule = function(id, name)
 {
@@ -525,8 +518,7 @@ WebInspector.AuditRules.CacheControlRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.CacheControlRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.CacheControlRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.BrowserCacheControlRule = function()
 {
@@ -591,8 +583,7 @@ WebInspector.AuditRules.BrowserCacheControlRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.BrowserCacheControlRule.prototype.__proto__ = WebInspector.AuditRules.CacheControlRule.prototype;
-
+extend(WebInspector.AuditRules.BrowserCacheControlRule, WebInspector.AuditRules.CacheControlRule);
 
 WebInspector.AuditRules.ProxyCacheControlRule = function() {
     WebInspector.AuditRules.CacheControlRule.call(this, "http-proxycache", "Leverage proxy caching");
@@ -628,8 +619,7 @@ WebInspector.AuditRules.ProxyCacheControlRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.ProxyCacheControlRule.prototype.__proto__ = WebInspector.AuditRules.CacheControlRule.prototype;
-
+extend(WebInspector.AuditRules.ProxyCacheControlRule, WebInspector.AuditRules.CacheControlRule);
 
 WebInspector.AuditRules.ImageDimensionsRule = function()
 {
@@ -725,8 +715,7 @@ WebInspector.AuditRules.ImageDimensionsRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.ImageDimensionsRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.ImageDimensionsRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CssInHeadRule = function()
 {
@@ -801,8 +790,7 @@ WebInspector.AuditRules.CssInHeadRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.CssInHeadRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.CssInHeadRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.StylesScriptsOrderRule = function()
 {
@@ -848,8 +836,7 @@ WebInspector.AuditRules.StylesScriptsOrderRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.StylesScriptsOrderRule.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.StylesScriptsOrderRule, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CookieRuleBase = function(id, name)
 {
@@ -888,8 +875,7 @@ WebInspector.AuditRules.CookieRuleBase.prototype = {
     }
 }
 
-WebInspector.AuditRules.CookieRuleBase.prototype.__proto__ = WebInspector.AuditRule.prototype;
-
+extend(WebInspector.AuditRules.CookieRuleBase, WebInspector.AuditRule);
 
 WebInspector.AuditRules.CookieSizeRule = function(avgBytesThreshold)
 {
@@ -994,8 +980,7 @@ WebInspector.AuditRules.CookieSizeRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.CookieSizeRule.prototype.__proto__ = WebInspector.AuditRules.CookieRuleBase.prototype;
-
+extend(WebInspector.AuditRules.CookieSizeRule, WebInspector.AuditRules.CookieRuleBase);
 
 WebInspector.AuditRules.StaticCookielessRule = function(minResources)
 {
@@ -1038,4 +1023,4 @@ WebInspector.AuditRules.StaticCookielessRule.prototype = {
     }
 }
 
-WebInspector.AuditRules.StaticCookielessRule.prototype.__proto__ = WebInspector.AuditRules.CookieRuleBase.prototype;
+extend(WebInspector.AuditRules.StaticCookielessRule, WebInspector.AuditRules.CookieRuleBase);

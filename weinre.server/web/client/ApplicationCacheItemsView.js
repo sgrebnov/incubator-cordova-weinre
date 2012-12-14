@@ -267,4 +267,4 @@ WebInspector.ApplicationCacheItemsView.prototype = {
     }
 }
 
-WebInspector.ApplicationCacheItemsView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ApplicationCacheItemsView, WebInspector.View);

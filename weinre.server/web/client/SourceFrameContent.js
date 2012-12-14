@@ -119,4 +119,4 @@ WebInspector.IdenticalSourceMapping.prototype = {
     }
 }
 
-WebInspector.IdenticalSourceMapping.prototype.__proto__ = WebInspector.SourceMapping.prototype;
+extend(WebInspector.IdenticalSourceMapping, WebInspector.SourceMapping);

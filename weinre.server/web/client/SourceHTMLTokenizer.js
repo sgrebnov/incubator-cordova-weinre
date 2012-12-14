@@ -777,4 +777,4 @@ case 119:
     }
 }
 
-WebInspector.SourceHTMLTokenizer.prototype.__proto__ = WebInspector.SourceTokenizer.prototype;
+extend(WebInspector.SourceHTMLTokenizer, WebInspector.SourceTokenizer);

@@ -75,4 +75,4 @@ WebInspector.ShowMoreDataGridNode.prototype = {
     }
 };
 
-WebInspector.ShowMoreDataGridNode.prototype.__proto__ = WebInspector.DataGridNode.prototype;
+extend(WebInspector.ShowMoreDataGridNode, WebInspector.DataGridNode);

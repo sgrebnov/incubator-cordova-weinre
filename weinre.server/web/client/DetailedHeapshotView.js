@@ -50,7 +50,7 @@ WebInspector.DetailedHeapshotView.prototype = {
     }
 };
 
-WebInspector.DetailedHeapshotView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.DetailedHeapshotView, WebInspector.View);
 
 WebInspector.DetailedHeapshotProfileType = function()
 {
@@ -89,4 +89,4 @@ WebInspector.DetailedHeapshotProfileType.prototype = {
     }
 }
 
-WebInspector.DetailedHeapshotProfileType.prototype.__proto__ = WebInspector.ProfileType.prototype;
+extend(WebInspector.DetailedHeapshotProfileType, WebInspector.ProfileType);

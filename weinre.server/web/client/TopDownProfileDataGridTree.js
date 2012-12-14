@@ -64,7 +64,7 @@ WebInspector.TopDownProfileDataGridNode.prototype = {
     }
 }
 
-WebInspector.TopDownProfileDataGridNode.prototype.__proto__ = WebInspector.ProfileDataGridNode.prototype;
+extend(WebInspector.TopDownProfileDataGridNode, WebInspector.ProfileDataGridNode);
 
 WebInspector.TopDownProfileDataGridTree = function(/*ProfileView*/ profileView, /*ProfileNode*/ profileNode)
 {
@@ -118,4 +118,4 @@ WebInspector.TopDownProfileDataGridTree.prototype = {
     _sharedPopulate: WebInspector.TopDownProfileDataGridNode.prototype._sharedPopulate
 }
 
-WebInspector.TopDownProfileDataGridTree.prototype.__proto__ = WebInspector.ProfileDataGridTree.prototype;
+extend(WebInspector.TopDownProfileDataGridTree, WebInspector.ProfileDataGridTree);

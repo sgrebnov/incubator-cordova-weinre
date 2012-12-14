@@ -41,7 +41,7 @@ WebInspector.ResourceView.prototype = {
     }
 }
 
-WebInspector.ResourceView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ResourceView, WebInspector.View);
 
 WebInspector.ResourceView.createResourceView = function(resource)
 {
@@ -154,4 +154,4 @@ WebInspector.SourceFrameContentProviderForResource.prototype = {
     }
 }
 
-WebInspector.SourceFrameContentProviderForResource.prototype.__proto__ = WebInspector.SourceFrameContentProvider.prototype;
+extend(WebInspector.SourceFrameContentProviderForResource, WebInspector.SourceFrameContentProvider);

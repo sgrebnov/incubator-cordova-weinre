@@ -2414,4 +2414,4 @@ case 300:
     }
 }
 
-WebInspector.SourceJavaScriptTokenizer.prototype.__proto__ = WebInspector.SourceTokenizer.prototype;
+extend(WebInspector.SourceJavaScriptTokenizer, WebInspector.SourceTokenizer);

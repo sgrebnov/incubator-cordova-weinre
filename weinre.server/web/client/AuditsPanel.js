@@ -256,9 +256,7 @@ WebInspector.AuditsPanel.prototype = {
     }
 }
 
-WebInspector.AuditsPanel.prototype.__proto__ = WebInspector.Panel.prototype;
-
-
+extend(WebInspector.AuditsPanel, WebInspector.Panel);
 
 WebInspector.AuditCategory = function(displayName)
 {
@@ -442,8 +440,7 @@ WebInspector.AuditsSidebarTreeElement.prototype = {
     }
 }
 
-WebInspector.AuditsSidebarTreeElement.prototype.__proto__ = WebInspector.SidebarTreeElement.prototype;
-
+extend(WebInspector.AuditsSidebarTreeElement, WebInspector.SidebarTreeElement);
 
 WebInspector.AuditResultSidebarTreeElement = function(results, mainResourceURL, ordinal)
 {
@@ -465,8 +462,7 @@ WebInspector.AuditResultSidebarTreeElement.prototype = {
     }
 }
 
-WebInspector.AuditResultSidebarTreeElement.prototype.__proto__ = WebInspector.SidebarTreeElement.prototype;
-
+extend(WebInspector.AuditResultSidebarTreeElement, WebInspector.SidebarTreeElement);
 // Contributed audit rules should go into this namespace.
 WebInspector.AuditRules = {};
 

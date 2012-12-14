@@ -505,7 +505,7 @@ WebInspector.HeapSnapshotView.prototype = {
     }
 };
 
-WebInspector.HeapSnapshotView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.HeapSnapshotView, WebInspector.View);
 
 WebInspector.HeapSnapshotView.SearchHelper = {
     // In comparators, we assume that a value from a node is passed as the first parameter.
@@ -608,7 +608,7 @@ WebInspector.HeapSummaryCountCalculator.prototype = {
     }
 }
 
-WebInspector.HeapSummaryCountCalculator.prototype.__proto__ = WebInspector.HeapSummaryCalculator.prototype;
+extend(WebInspector.HeapSummaryCountCalculator, WebInspector.HeapSummaryCalculator);
 
 WebInspector.HeapSummarySizeCalculator = function()
 {
@@ -628,7 +628,7 @@ WebInspector.HeapSummarySizeCalculator.prototype = {
     _valueToString: Number.bytesToString
 }
 
-WebInspector.HeapSummarySizeCalculator.prototype.__proto__ = WebInspector.HeapSummaryCalculator.prototype;
+extend(WebInspector.HeapSummarySizeCalculator, WebInspector.HeapSummaryCalculator);
 
 WebInspector.HeapSnapshotDataGridNodeWithRetainers = function(owningTree)
 {
@@ -826,7 +826,7 @@ WebInspector.HeapSnapshotDataGridNodeWithRetainers.prototype = {
     }
 };
 
-WebInspector.HeapSnapshotDataGridNodeWithRetainers.prototype.__proto__ = WebInspector.DataGridNode.prototype;
+extend(WebInspector.HeapSnapshotDataGridNodeWithRetainers, WebInspector.DataGridNode);
 
 WebInspector.HeapSnapshotDataGridNode = function(snapshotView, baseEntry, snapshotEntry, owningTree)
 {
@@ -850,7 +850,7 @@ WebInspector.HeapSnapshotDataGridNode = function(snapshotView, baseEntry, snapsh
     WebInspector.HeapSnapshotDataGridNodeWithRetainers.call(this, owningTree);
 };
 
-WebInspector.HeapSnapshotDataGridNode.prototype.__proto__ = WebInspector.HeapSnapshotDataGridNodeWithRetainers.prototype;
+extend(WebInspector.HeapSnapshotDataGridNode, WebInspector.HeapSnapshotDataGridNodeWithRetainers);
 
 WebInspector.HeapSnapshotDataGridList = function(snapshotView, baseEntries, snapshotEntries)
 {
@@ -987,8 +987,8 @@ WebInspector.HeapSnapshotDataGridRetainerNode.prototype = {
     }
 };
 
-WebInspector.HeapSnapshotDataGridRetainerNode.prototype.__proto__ = WebInspector.HeapSnapshotDataGridNodeWithRetainers.prototype;
 
+extend(WebInspector.HeapSnapshotDataGridRetainerNode, WebInspector.HeapSnapshotDataGridNodeWithRetainers);
 
 WebInspector.HeapSnapshotProfileType = function()
 {
@@ -1029,4 +1029,4 @@ WebInspector.HeapSnapshotProfileType.prototype = {
     }
 }
 
-WebInspector.HeapSnapshotProfileType.prototype.__proto__ = WebInspector.ProfileType.prototype;
+extend(WebInspector.HeapSnapshotProfileType, WebInspector.ProfileType);

@@ -920,8 +920,7 @@ WebInspector.SourceFrame.prototype = {
     }
 }
 
-WebInspector.SourceFrame.prototype.__proto__ = WebInspector.View.prototype;
-
+extend(WebInspector.SourceFrame, WebInspector.View);
 
 WebInspector.SourceFrameContentProvider = function()
 {

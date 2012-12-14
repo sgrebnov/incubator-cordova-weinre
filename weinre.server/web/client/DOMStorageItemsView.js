@@ -154,4 +154,4 @@ WebInspector.DOMStorageItemsView.prototype = {
     }
 }
 
-WebInspector.DOMStorageItemsView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.DOMStorageItemsView, WebInspector.View);

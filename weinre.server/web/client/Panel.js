@@ -435,4 +435,4 @@ WebInspector.Panel.prototype = {
     }
 }
 
-WebInspector.Panel.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.Panel, WebInspector.View);

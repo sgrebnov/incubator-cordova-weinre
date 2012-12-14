@@ -41,8 +41,7 @@ WebInspector.AuditResultView = function(categoryResults)
         this.element.appendChild(new WebInspector.AuditCategoryResultPane(categoryResults[i]).element);
 }
 
-WebInspector.AuditResultView.prototype.__proto__ = WebInspector.View.prototype;
-
+extend(WebInspector.AuditResultView, WebInspector.View);
 
 WebInspector.AuditCategoryResultPane = function(categoryResult)
 {
@@ -111,4 +110,4 @@ WebInspector.AuditCategoryResultPane.prototype = {
     }
 }
 
-WebInspector.AuditCategoryResultPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.AuditCategoryResultPane, WebInspector.SidebarPane);

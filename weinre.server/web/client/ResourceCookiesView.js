@@ -68,4 +68,4 @@ WebInspector.ResourceCookiesView.prototype = {
     }
 }
 
-WebInspector.ResourceCookiesView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ResourceCookiesView, WebInspector.View);

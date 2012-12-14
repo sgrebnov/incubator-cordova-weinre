@@ -671,8 +671,7 @@ WebInspector.ProfilesPanel.prototype = {
     }
 }
 
-WebInspector.ProfilesPanel.prototype.__proto__ = WebInspector.Panel.prototype;
-
+extend(WebInspector.ProfilesPanel, WebInspector.Panel);
 
 WebInspector.ProfilerDispatcher = function(profiler)
 {
@@ -776,7 +775,7 @@ WebInspector.ProfileSidebarTreeElement.prototype = {
     }
 }
 
-WebInspector.ProfileSidebarTreeElement.prototype.__proto__ = WebInspector.SidebarTreeElement.prototype;
+extend(WebInspector.ProfileSidebarTreeElement, WebInspector.SidebarTreeElement);
 
 WebInspector.ProfileGroupSidebarTreeElement = function(title, subtitle)
 {
@@ -791,4 +790,4 @@ WebInspector.ProfileGroupSidebarTreeElement.prototype = {
     }
 }
 
-WebInspector.ProfileGroupSidebarTreeElement.prototype.__proto__ = WebInspector.SidebarTreeElement.prototype;
+extend(WebInspector.ProfileGroupSidebarTreeElement, WebInspector.SidebarTreeElement);

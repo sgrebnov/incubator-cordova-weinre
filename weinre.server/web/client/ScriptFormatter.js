@@ -230,4 +230,4 @@ WebInspector.SourceMappingForFormattedScript.prototype = {
     }
 }
 
-WebInspector.SourceMappingForFormattedScript.prototype.__proto__ = WebInspector.SourceMapping.prototype;
+extend(WebInspector.SourceMappingForFormattedScript, WebInspector.SourceMapping);

@@ -193,4 +193,4 @@ WebInspector.DatabaseQueryView.prototype = {
     }
 }
 
-WebInspector.DatabaseQueryView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.DatabaseQueryView, WebInspector.View);

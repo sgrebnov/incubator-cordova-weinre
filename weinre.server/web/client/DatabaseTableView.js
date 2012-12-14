@@ -87,4 +87,4 @@ WebInspector.DatabaseTableView.prototype = {
     }
 }
 
-WebInspector.DatabaseTableView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.DatabaseTableView, WebInspector.View);

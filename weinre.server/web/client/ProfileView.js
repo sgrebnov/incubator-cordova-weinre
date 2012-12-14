@@ -567,7 +567,7 @@ WebInspector.CPUProfileView.prototype = {
     }
 }
 
-WebInspector.CPUProfileView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.CPUProfileView, WebInspector.View);
 
 WebInspector.CPUProfileType = function()
 {
@@ -619,4 +619,4 @@ WebInspector.CPUProfileType.prototype = {
     }
 }
 
-WebInspector.CPUProfileType.prototype.__proto__ = WebInspector.ProfileType.prototype;
+extend(WebInspector.CPUProfileType, WebInspector.ProfileType);

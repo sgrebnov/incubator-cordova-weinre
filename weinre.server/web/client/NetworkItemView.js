@@ -88,4 +88,4 @@ WebInspector.NetworkItemView.prototype = {
     }
 }
 
-WebInspector.NetworkItemView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.NetworkItemView, WebInspector.View);

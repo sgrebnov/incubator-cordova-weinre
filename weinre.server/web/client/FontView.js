@@ -106,4 +106,4 @@ WebInspector.FontView.prototype = {
     }
 }
 
-WebInspector.FontView.prototype.__proto__ = WebInspector.ResourceView.prototype;
+extend(WebInspector.FontView, WebInspector.ResourceView);

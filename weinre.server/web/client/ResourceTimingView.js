@@ -154,4 +154,4 @@ WebInspector.ResourceTimingView.createTimingTable = function(resource)
     return tableElement;
 }
 
-WebInspector.ResourceTimingView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ResourceTimingView, WebInspector.View);

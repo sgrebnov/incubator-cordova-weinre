@@ -711,7 +711,7 @@ WebInspector.HeapSnapshotEdgesProvider.prototype = {
     }
 };
 
-WebInspector.HeapSnapshotEdgesProvider.prototype.__proto__ = WebInspector.HeapSnapshotFilteredOrderedIterator.prototype;
+extend(WebInspector.HeapSnapshotEdgesProvider, WebInspector.HeapSnapshotFilteredOrderedIterator);
 
 WebInspector.HeapSnapshotNodesProvider = function(snapshot, nodes, filter)
 {
@@ -757,7 +757,7 @@ WebInspector.HeapSnapshotNodesProvider.prototype = {
     }
 };
 
-WebInspector.HeapSnapshotNodesProvider.prototype.__proto__ = WebInspector.HeapSnapshotFilteredOrderedIterator.prototype;
+extend(WebInspector.HeapSnapshotNodesProvider, WebInspector.HeapSnapshotFilteredOrderedIterator);
 
 WebInspector.HeapSnapshotPathFinder = function(snapshot, targetNodeIndex)
 {

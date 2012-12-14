@@ -360,4 +360,4 @@ WebInspector.SummaryBar.prototype = {
     }
 }
 
-WebInspector.SummaryBar.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.SummaryBar, WebInspector.Object);

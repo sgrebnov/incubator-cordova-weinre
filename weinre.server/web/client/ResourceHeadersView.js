@@ -273,4 +273,4 @@ WebInspector.ResourceHeadersView.prototype = {
     }
 }
 
-WebInspector.ResourceHeadersView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.ResourceHeadersView, WebInspector.View);

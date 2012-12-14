@@ -224,7 +224,7 @@ PanelWithSidebarImpl.prototype = {
     }
 }
 
-PanelWithSidebarImpl.prototype.__proto__ = PanelImpl.prototype;
+extend(PanelWithSidebarImpl, PanelImpl);
 
 function ElementsPanel()
 {
@@ -269,7 +269,7 @@ WatchExpressionSidebarPaneImpl.prototype = {
     }
 }
 
-WatchExpressionSidebarPaneImpl.prototype.__proto__ = ExtensionSidebarPaneImpl.prototype;
+extend(WatchExpressionSidebarPaneImpl, ExtensionSidebarPaneImpl);
 
 function WatchExpressionSidebarPane(id)
 {

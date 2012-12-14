@@ -120,4 +120,4 @@ WebInspector.ImageView.prototype = {
     }
 }
 
-WebInspector.ImageView.prototype.__proto__ = WebInspector.ResourceView.prototype;
+extend(WebInspector.ImageView, WebInspector.ResourceView);

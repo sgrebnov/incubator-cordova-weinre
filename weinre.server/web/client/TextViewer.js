@@ -439,7 +439,7 @@ WebInspector.TextEditorGutterPanel.prototype = {
     }
 }
 
-WebInspector.TextEditorGutterPanel.prototype.__proto__ = WebInspector.TextEditorChunkedPanel.prototype;
+extend(WebInspector.TextEditorGutterPanel, WebInspector.TextEditorChunkedPanel);
 
 WebInspector.TextEditorGutterChunk = function(textViewer, startLine, endLine)
 {
@@ -1144,7 +1144,7 @@ WebInspector.TextEditorMainPanel.prototype = {
     }
 }
 
-WebInspector.TextEditorMainPanel.prototype.__proto__ = WebInspector.TextEditorChunkedPanel.prototype;
+extend(WebInspector.TextEditorMainPanel, WebInspector.TextEditorChunkedPanel);
 
 WebInspector.TextEditorMainChunk = function(textViewer, startLine, endLine)
 {

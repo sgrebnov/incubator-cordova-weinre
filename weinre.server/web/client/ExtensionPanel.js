@@ -79,7 +79,7 @@ WebInspector.ExtensionPanel.prototype = {
     }
 }
 
-WebInspector.ExtensionPanel.prototype.__proto__ = WebInspector.Panel.prototype;
+extend(WebInspector.ExtensionPanel, WebInspector.Panel);
 
 WebInspector.ExtensionWatchSidebarPane = function(title, id)
 {
@@ -115,4 +115,4 @@ WebInspector.ExtensionWatchSidebarPane.prototype = {
     }
 }
 
-WebInspector.ExtensionWatchSidebarPane.prototype.__proto__ = WebInspector.SidebarPane.prototype;
+extend(WebInspector.ExtensionWatchSidebarPane, WebInspector.SidebarPane);

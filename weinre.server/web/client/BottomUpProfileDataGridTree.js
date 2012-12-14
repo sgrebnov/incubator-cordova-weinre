@@ -143,7 +143,7 @@ WebInspector.BottomUpProfileDataGridNode.prototype = {
     }
 }
 
-WebInspector.BottomUpProfileDataGridNode.prototype.__proto__ = WebInspector.ProfileDataGridNode.prototype;
+extend(WebInspector.BottomUpProfileDataGridNode, WebInspector.ProfileDataGridNode);
 
 WebInspector.BottomUpProfileDataGridTree = function(/*ProfileView*/ aProfileView, /*ProfileNode*/ aProfileNode)
 {
@@ -260,5 +260,4 @@ WebInspector.BottomUpProfileDataGridTree.prototype = {
     _sharedPopulate: WebInspector.BottomUpProfileDataGridNode.prototype._sharedPopulate
 }
 
-WebInspector.BottomUpProfileDataGridTree.prototype.__proto__ = WebInspector.ProfileDataGridTree.prototype;
-
+extend(WebInspector.BottomUpProfileDataGridTree, WebInspector.ProfileDataGridTree);

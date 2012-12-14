@@ -83,4 +83,4 @@ WebInspector.TabbedPane.prototype = {
     }
 }
 
-WebInspector.TabbedPane.prototype.__proto__ = WebInspector.Object.prototype;
+extend(WebInspector.TabbedPane, WebInspector.Object);

@@ -293,7 +293,7 @@ WebInspector.ProfileDataGridNode.prototype = {
     }
 }
 
-WebInspector.ProfileDataGridNode.prototype.__proto__ = WebInspector.DataGridNode.prototype;
+extend(WebInspector.ProfileDataGridNode, WebInspector.DataGridNode);
 
 WebInspector.ProfileDataGridTree = function(profileView, profileNode)
 {

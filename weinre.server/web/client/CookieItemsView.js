@@ -156,7 +156,7 @@ WebInspector.CookieItemsView.prototype = {
     }
 }
 
-WebInspector.CookieItemsView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.CookieItemsView, WebInspector.View);
 
 WebInspector.SimpleCookiesTable = function()
 {

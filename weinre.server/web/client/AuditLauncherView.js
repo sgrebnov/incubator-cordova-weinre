@@ -251,4 +251,4 @@ WebInspector.AuditLauncherView.prototype = {
     }
 }
 
-WebInspector.AuditLauncherView.prototype.__proto__ = WebInspector.View.prototype;
+extend(WebInspector.AuditLauncherView, WebInspector.View);

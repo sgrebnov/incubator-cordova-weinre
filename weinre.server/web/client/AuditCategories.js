@@ -43,7 +43,7 @@ WebInspector.AuditCategories.PagePerformance.prototype = {
     }
 }
 
-WebInspector.AuditCategories.PagePerformance.prototype.__proto__ = WebInspector.AuditCategory.prototype;
+extend(WebInspector.AuditCategories.PagePerformance, WebInspector.AuditCategory);
 
 WebInspector.AuditCategories.NetworkUtilization = function() {
     WebInspector.AuditCategory.call(this, WebInspector.AuditCategories.NetworkUtilization.AuditCategoryName);
@@ -67,4 +67,4 @@ WebInspector.AuditCategories.NetworkUtilization.prototype = {
     }
 }
 
-WebInspector.AuditCategories.NetworkUtilization.prototype.__proto__ = WebInspector.AuditCategory.prototype;
+extend(WebInspector.AuditCategories.NetworkUtilization, WebInspector.AuditCategory);
