@@ -1567,6 +1567,9 @@ li.editing .swatch, li.editing .enabled-button,  li.editing-sub-part .delete-but
     padding: 0;
     -webkit-border-radius: 0;
     -webkit-appearance: none;
+	/* hack for appearance for non-webkit browsers */
+	padding-left: 10px;
+	padding-right: 13px;
 }
 
 .pane > .title > select:hover {
