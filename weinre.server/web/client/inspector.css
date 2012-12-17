@@ -43,12 +43,14 @@ body {
     font-size: 10px;
     margin: 0;
     -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
     -webkit-user-select: none;
 	-ms-user-select: none;
 }
 
 * {
     -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :focus {
@@ -78,6 +80,7 @@ img {
     right: 0;
     height: 56px;
     display: -webkit-box;
+    display: -ms-flexbox;
     padding: 0 5px;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(191, 191, 191)), to(rgb(151, 151, 151)));
     background-image: linear-gradient(to bottom, rgb(191, 191, 191) 0%, rgb(151, 151, 151) 100%);
@@ -85,6 +88,9 @@ img {
     -webkit-box-orient: horizontal;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    -ms-flex-direction: row;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 body.inactive #toolbar {
@@ -115,6 +121,7 @@ body.attached.inactive #toolbar {
 
 .toolbar-item {
     display: -webkit-box;
+    display: -ms-flexbox;
     padding: 4px 6px;
     margin: 0;
     background-color: transparent;
@@ -123,6 +130,9 @@ body.attached.inactive #toolbar {
     -webkit-box-orient: vertical;
     -webkit-box-align: center;
     -webkit-box-pack: end;
+    -ms-flex-direction: column;
+    -ms-flex-align: center;
+    -ms-flex-pack: end;
 }
 
 .toolbar-item.toggleable.toggled-on {
@@ -133,6 +143,7 @@ body.attached.inactive #toolbar {
 
 .toolbar-item.flexable-space {
     -webkit-box-flex: 1;
+    -ms-flex: 1;
     visibility: hidden;
 }
 
@@ -145,6 +156,7 @@ body.attached.inactive #toolbar {
     width: 32px;
     height: 32px;
     -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 
 body.attached .toolbar-icon {
@@ -533,6 +545,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     -webkit-user-select: text;
 	-ms-user-select: text;
     -webkit-text-size-adjust: auto;
+    -ms-text-size-adjust: auto;
 }
 
 #console-prompt {
@@ -596,6 +609,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     text-shadow: none;
     color: white;
     -webkit-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .console-message-text {
@@ -844,6 +858,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     max-height: 1000px;
     background-image: url(Images/checker.png);
     -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     -webkit-user-select: text;
 	-ms-user-select: text;
     -webkit-user-drag: auto;
@@ -1009,11 +1024,13 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     right: 3px;
     background-color: rgba(56, 121, 217, 0.1);
     -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .outline-disclosure li.highlighted .highlight {
     background-color: rgb(255, 230, 179);
     -webkit-border-radius: 4px;
+    border-radius: 4px;
     padding-bottom: 2px;
     margin-bottom: -2px;
 }
@@ -1152,6 +1169,8 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     background-image: linear-gradient(to bottom, rgb(162, 177, 207) 0%, rgb(120, 138, 177) 100%);
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 :focus .placard.selected {
@@ -1220,6 +1239,8 @@ body.inactive .placard.selected {
     white-space: nowrap;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 .section .header::before {
@@ -1379,6 +1400,8 @@ body.inactive .placard.selected {
     white-space: nowrap;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 .event-bars .event-bar .header .title {
@@ -1409,6 +1432,7 @@ body.inactive .placard.selected {
     -webkit-user-select: text;
 	-ms-user-select: text;
     -webkit-box-shadow: rgba(0, 0, 0, .5) 3px 3px 4px;
+    box-shadow: rgba(0, 0, 0, .5) 3px 3px 4px;
     outline: 1px solid rgb(66%, 66%, 66%) !important;
     background-color: white;
     -webkit-user-modify: read-write-plaintext-only;
@@ -1539,6 +1563,8 @@ li.editing .swatch, li.editing .enabled-button,  li.editing-sub-part .delete-but
     text-shadow: white 0 1px 0;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 .pane > .title:active {
@@ -1573,6 +1599,7 @@ li.editing .swatch, li.editing .enabled-button,  li.editing-sub-part .delete-but
     margin: 1px 0 0 0;
     padding: 0;
     -webkit-border-radius: 0;
+    border-radius: 0;
     -webkit-appearance: none;
 	/* hack for appearance for non-webkit browsers */
 	padding-left: 10px;
@@ -1603,6 +1630,7 @@ li.editing .swatch, li.editing .enabled-button,  li.editing-sub-part .delete-but
     margin: 1px 0 0 0;
     padding: 0;
     -webkit-border-radius: 0;
+    border-radius: 0;
     -webkit-appearance: none;
 }
 
@@ -2028,6 +2056,7 @@ li.selected .base-storage-tree-element-subtitle {
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(0.5, white), color-stop(0.5, rgb(234, 243, 255)), to(rgb(234, 243, 255)));
     background-image: linear-gradient(to bottom, white 0%, white 10%, rgb(234, 243, 255) 40%, rgb(234, 243, 255) 100%);
     -webkit-background-size: 1px 32px;
+    background-size: 1px 32px;
 }
 
 .data-grid.inline table.data {
@@ -2173,6 +2202,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
     overflow-y: overlay;
     overflow-x: hidden;
     -webkit-text-size-adjust: auto;
+    -ms-text-size-adjust: auto;
 }
 
 .database-query-prompt {
@@ -2327,6 +2357,7 @@ body.inactive .data-grid th.sort-ascending, body.inactive .data-grid th.sort-des
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(252, 252, 252)), to(rgb(223, 223, 223)));
     background-image: linear-gradient(to bottom, rgb(252, 252, 252) 0%, rgb(233, 233, 233) 100%);
     -webkit-border-radius: 12px;
+    border-radius: 12px;
     -webkit-appearance: none;
 }
 
@@ -2396,6 +2427,7 @@ body.inactive .panel-enabler-view button:not(.status-bar-item), .panel-enabler-v
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(252, 252, 252)), to(rgb(223, 223, 223)));
     background-image: linear-gradient(to bottom, rgb(252, 252, 252) 0%, rgb(223, 223, 223) 100%);
     -webkit-border-radius: 8px;
+    border-radius: 8px;
     -webkit-appearance: none;
     vertical-align: middle;
     margin: 0 5px 5px 0;
@@ -2578,11 +2610,13 @@ button.enable-toggle-status-bar-item.toggled-on .glyph {
 
 .tabbed-pane {
     -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
     height: 100%;
 }
 
 .tabbed-pane-content {
     -webkit-box-flex: 1;
+    -ms-flex: 1;
     position: relative;
 }
 
@@ -2630,6 +2664,7 @@ button.enable-toggle-status-bar-item.toggled-on .glyph {
     background: transparent;
     text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
     -webkit-border-radius: 8px;
+    border-radius: 8px;
     vertical-align: middle;
 }
 
@@ -2654,11 +2689,13 @@ button.enable-toggle-status-bar-item.toggled-on .glyph {
 .scope-bar li.selected {
     background: rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 -1px 1px rgba(255, 255, 255, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 -1px 1px rgba(255, 255, 255, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .scope-bar li:active {
     background: rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 -1px 1px rgba(255, 255, 255, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 -1px 1px rgba(255, 255, 255, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #resources-container {
@@ -2722,6 +2759,9 @@ button.enable-toggle-status-bar-item.toggled-on .glyph {
     -webkit-background-size: 1px 6px;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-size: 1px 6px;
+    background-origin: padding;
+    background-clip: padding;
     z-index: 400;
 }
 
@@ -2869,6 +2909,7 @@ button.enable-toggle-status-bar-item.toggled-on .glyph {
     font-weight: bold;
     opacity: 0;
     -webkit-transition: opacity 250ms ease-in-out;
+    -ms-transition: opacity 250ms ease-in-out;
 }
 
 .resources-graph-side:hover .resources-graph-label {
@@ -3198,6 +3239,7 @@ li .status .bubble {
     text-shadow: none;
     color: white;
     -webkit-border-radius: 7px;
+    border-radius: 7px;
 }
 
 li .status .bubble:empty {
@@ -3239,6 +3281,8 @@ body.inactive li.selected .status .bubble {
     font-weight: bold;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 :focus .sidebar-tree-item.selected {
@@ -3556,7 +3600,9 @@ body.inactive li.selected .bubble.search-matches {
     z-index: 500;
     cursor: col-resize;
     -webkit-border-radius: 2px;
+    border-radius: 2px;
     -webkit-box-shadow: white 1px 0 0, white -1px 0 0, white 0 1px 0, white 0 -1px 0;
+    box-shadow: white 1px 0 0, white -1px 0 0, white 0 1px 0, white 0 -1px 0;
 }
 
 #timeline-overview-grid #resources-graphs {
@@ -4081,6 +4127,7 @@ li.breakpoint-hit .breakpoint-hit-marker {
     padding: 4px;
     background-color: rgb(203, 226, 255);
     -webkit-border-radius: 7px;
+    border-radius: 7px;
     border: 2px solid rgb(169, 172, 203); 
     width: 90%; 
 }
@@ -4174,6 +4221,8 @@ a.worker-item {
     white-space: nowrap;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
     -webkit-user-select: text;
 	-ms-user-select: text;
 }
@@ -4208,6 +4257,8 @@ a.worker-item {
     white-space: nowrap;
     -webkit-background-origin: padding;
     -webkit-background-clip: padding;
+    background-origin: padding;
+    background-clip: padding;
 }
 
 .styles-section .header .title {
