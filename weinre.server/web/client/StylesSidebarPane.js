@@ -1581,7 +1581,7 @@ WebInspector.StylePropertyTreeElement.prototype = {
                     event.preventDefault();
                     return "move-backward";
                 }
-            } else if (event.keyIdentifier === "U+0009") // Tab key.
+            } else if ((event.keyIdentifier || event.key) === "U+0009") // Tab key.
                 return "move-" + (event.shiftKey ? "backward" : "forward");
         }
 
@@ -1626,8 +1626,9 @@ WebInspector.StylePropertyTreeElement.prototype = {
     {
         if (event.handled)
             return;
-        var arrowKeyPressed = (event.keyIdentifier === "Up" || event.keyIdentifier === "Down");
-        var pageKeyPressed = (event.keyIdentifier === "PageUp" || event.keyIdentifier === "PageDown");
+        var key = event.keyIdentifier || event.key;
+        var arrowKeyPressed = (key === "Up" || key === "Down");
+        var pageKeyPressed = (key === "PageUp" || key === "PageDown");
         if (!arrowKeyPressed && !pageKeyPressed)
             return;
 
@@ -1651,13 +1652,13 @@ WebInspector.StylePropertyTreeElement.prototype = {
 
             // If the number is near zero or the number is one and the direction will take it near zero.
             var numberNearZero = (number < 1 && number > -1);
-            if (number === 1 && event.keyIdentifier === "Down")
+            if (number === 1 && key === "Down")
                 numberNearZero = true;
-            else if (number === -1 && event.keyIdentifier === "Up")
+            else if (number === -1 && key === "Up")
                 numberNearZero = true;
 
             if (numberNearZero && event.altKey && arrowKeyPressed) {
-                if (event.keyIdentifier === "Down")
+                if (key === "Down")
                     number = Math.ceil(number - 1);
                 else
                     number = Math.floor(number + 1);
@@ -1672,7 +1673,7 @@ WebInspector.StylePropertyTreeElement.prototype = {
                 else if (event.altKey || numberNearZero)
                     changeAmount = 0.1;
 
-                if (event.keyIdentifier === "Down" || event.keyIdentifier === "PageDown")
+                if (key === "Down" || key === "PageDown")
                     changeAmount *= -1;
 
                 // Make the new number and constrain it to a precision of 6, this matches numbers the engine returns.
@@ -1927,7 +1928,7 @@ WebInspector.StylesSidebarPane.CSSPropertyPrompt.prototype = {
 
     _handleNameOrValueUpDown: function(event)
     {
-        var reverse = event.keyIdentifier === "Up";
+        var reverse = (event.keyIdentifier || event.key) === "Up";
         if (this.autoCompleteElement)
             this.complete(false, reverse); // Accept the current suggestion, if any.
         else {

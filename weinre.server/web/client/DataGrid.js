@@ -724,18 +724,19 @@ WebInspector.DataGrid.prototype = {
             return;
 
         var handled = false;
-        var nextSelectedNode;
-        if (event.keyIdentifier === "Up" && !event.altKey) {
+        var nextSelectedNode,
+            key = event.keyIdentifier || event.key;
+        if (key === "Up" && !event.altKey) {
             nextSelectedNode = this.selectedNode.traversePreviousNode(true);
             while (nextSelectedNode && !nextSelectedNode.selectable)
                 nextSelectedNode = nextSelectedNode.traversePreviousNode(!this.expandTreeNodesWhenArrowing);
             handled = nextSelectedNode ? true : false;
-        } else if (event.keyIdentifier === "Down" && !event.altKey) {
+        } else if (key === "Down" && !event.altKey) {
             nextSelectedNode = this.selectedNode.traverseNextNode(true);
             while (nextSelectedNode && !nextSelectedNode.selectable)
                 nextSelectedNode = nextSelectedNode.traverseNextNode(!this.expandTreeNodesWhenArrowing);
             handled = nextSelectedNode ? true : false;
-        } else if (event.keyIdentifier === "Left") {
+        } else if (key === "Left") {
             if (this.selectedNode.expanded) {
                 if (event.altKey)
                     this.selectedNode.collapseRecursively();
@@ -750,7 +751,7 @@ WebInspector.DataGrid.prototype = {
                 } else if (this.selectedNode.parent)
                     this.selectedNode.parent.collapse();
             }
-        } else if (event.keyIdentifier === "Right") {
+        } else if (key === "Right") {
             if (!this.selectedNode.revealed) {
                 this.selectedNode.reveal();
                 handled = true;

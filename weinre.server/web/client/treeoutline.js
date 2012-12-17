@@ -347,18 +347,19 @@ TreeOutline.prototype._treeKeyDown = function(event)
         return;
 
     var handled = false;
-    var nextSelectedElement;
-    if (event.keyIdentifier === "Up" && !event.altKey) {
+    var nextSelectedElement,
+        key = event.keyIdentifier || event.key;
+    if (key === "Up" && !event.altKey) {
         nextSelectedElement = this.selectedTreeElement.traversePreviousTreeElement(true);
         while (nextSelectedElement && !nextSelectedElement.selectable)
             nextSelectedElement = nextSelectedElement.traversePreviousTreeElement(!this.expandTreeElementsWhenArrowing);
         handled = nextSelectedElement ? true : false;
-    } else if (event.keyIdentifier === "Down" && !event.altKey) {
+    } else if (key === "Down" && !event.altKey) {
         nextSelectedElement = this.selectedTreeElement.traverseNextTreeElement(true);
         while (nextSelectedElement && !nextSelectedElement.selectable)
             nextSelectedElement = nextSelectedElement.traverseNextTreeElement(!this.expandTreeElementsWhenArrowing);
         handled = nextSelectedElement ? true : false;
-    } else if (event.keyIdentifier === "Left") {
+    } else if (key === "Left") {
         if (this.selectedTreeElement.expanded) {
             if (event.altKey)
                 this.selectedTreeElement.collapseRecursively();
@@ -373,7 +374,7 @@ TreeOutline.prototype._treeKeyDown = function(event)
             } else if (this.selectedTreeElement.parent)
                 this.selectedTreeElement.parent.collapse();
         }
-    } else if (event.keyIdentifier === "Right") {
+    } else if (key === "Right") {
         if (!this.selectedTreeElement.revealed()) {
             this.selectedTreeElement.reveal();
             handled = true;

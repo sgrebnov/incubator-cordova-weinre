@@ -761,9 +761,9 @@ WebInspector.documentKeyDown = function(event)
     var isInputElement = event.target.nodeName === "INPUT";
     var isInEditMode = event.target.enclosingNodeOrSelfWithClass("text-prompt") || WebInspector.isEditingAnyField();
     var helpKey = WebInspector.isMac() ? "U+003F" : "U+00BF"; // "?" for both platforms
-
-    if (event.keyIdentifier === "F1" ||
-        (event.keyIdentifier === helpKey && event.shiftKey && (!isInEditMode && !isInputElement || event.metaKey))) {
+    var key = event.keyIdentifier || event.key;
+    if (key === "F1" ||
+        (key === helpKey && event.shiftKey && (!isInEditMode && !isInputElement || event.metaKey))) {
         WebInspector.shortcutsHelp.show();
         event.stopPropagation();
         event.preventDefault();
@@ -790,7 +790,7 @@ WebInspector.documentKeyDown = function(event)
     }
 
     var isMac = WebInspector.isMac();
-    switch (event.keyIdentifier) {
+    switch (key) {
         case "Left":
             var isBackKey = !isInEditMode && (isMac ? event.metaKey : event.ctrlKey);
             if (isBackKey && this._panelHistory.canGoBack()) {
@@ -1568,7 +1568,7 @@ WebInspector._searchKeyDown = function(event)
 
 WebInspector.performSearch = function(event)
 {
-    var forceSearch = event.keyIdentifier === "Enter";
+    var forceSearch = (event.keyIdentifier || event.key) === "Enter";
     this.doPerformSearch(event.target.value, forceSearch, event.shiftKey, false);
 }
 
@@ -1803,7 +1803,7 @@ WebInspector.startEditing = function(element, config)
             return "commit";
         else if (event.keyCode === WebInspector.KeyboardShortcut.Keys.Esc.code)
             return "cancel";
-        else if (event.keyIdentifier === "U+0009") // Tab key
+        else if ((event.keyIdentifier || event.key) === "U+0009") // Tab key
             return "move-" + (event.shiftKey ? "backward" : "forward");
     }
 
@@ -1819,7 +1819,7 @@ WebInspector.startEditing = function(element, config)
             event.stopPropagation();
         } else if (result && result.indexOf("move-") === 0) {
             moveDirection = result.substring(5);
-            if (event.keyIdentifier !== "U+0009")
+            if ((event.keyIdentifier || event.key) !== "U+0009")
                 blurEventListener();
         }
     }

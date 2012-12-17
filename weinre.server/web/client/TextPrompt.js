@@ -75,9 +75,10 @@ WebInspector.TextPrompt.prototype = {
         if (event.handled)
             return;
 
-        var handled = false;
+        var handled = false,
+            key = event.keyIdentifier || event.key;
 
-        switch (event.keyIdentifier) {
+        switch (key) {
             case "Up":
                 this.upKeyPressed(event);
                 break;
