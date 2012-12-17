@@ -123,6 +123,11 @@ var WebInspector = {
         if (this._currentFocusElement) {
             this._currentFocusElement.focus();
 
+            //Hack for IE - do return if the focused element is 'select'. Otherwise it loses the focus after calling addRange function.
+            if(this._currentFocusElement.nodeName.toUpperCase() == 'SELECT'){
+                return;
+            }
+
             // Make a caret selection inside the new element if there isn't a range selection and
             // there isn't already a caret selection inside.
             var selection = window.getSelection();
