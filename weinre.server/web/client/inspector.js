@@ -139,7 +139,8 @@ var WebInspector = {
                 selection.removeAllRanges();
                 selection.addRange(selectionRange);
             }
-        } else if (this._previousFocusElement)
+        }//Hack for IE - do not call blur() for body element . Otherwise browser window becomes inactive
+        else if (this._previousFocusElement && this._previousFocusElement.nodeName.toUpperCase() != 'BODY')
             this._previousFocusElement.blur();
     },
 
