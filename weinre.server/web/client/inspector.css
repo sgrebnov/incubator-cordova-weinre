@@ -4288,6 +4288,8 @@ a.worker-item {
     vertical-align: top;
     position: relative;
     z-index: 1;
+    /*Removes checkbox padding that is set in IE by default*/
+    padding: 0;
 }
 
 .styles-section .properties .overloaded, .styles-section .properties .inactive, .styles-section .properties .disabled {
