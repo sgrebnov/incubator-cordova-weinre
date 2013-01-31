@@ -1060,7 +1060,12 @@ WebInspector.ElementsTreeElement.prototype = {
             var previous = element.previousSibling;
             if (!previous || previous.nodeType !== Node.TEXT_NODE)
                 element.parentNode.insertBefore(document.createTextNode(" "), element);
-            element.outerHTML = this._attributeHTML(name, value);
+				
+			var updatedElement = document.createDocumentFragment();			
+			updatedElement.innerHTML = this._attributeHTML(name, value);	
+			element.parentNode.replaceChild(updatedElement, element);
+				
+            //element.outerHTML = this._attributeHTML(name, value);
         }
 
         var parseContainerElement = document.createElement("span");
