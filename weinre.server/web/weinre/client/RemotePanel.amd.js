@@ -17,21 +17,21 @@ module.exports = RemotePanel = (function(_super) {
 
   __extends(RemotePanel, _super);
 
-  Object.defineProperty(RemotePanel.prototype, "toolbarItemClass", function() {
+  Object.defineProperty(RemotePanel.prototype, "toolbarItemClass", {get: function() {
     return "remote";
-  });
+  }});
 
-  Object.defineProperty(RemotePanel.prototype, "toolbarItemLabel", function() {
+  Object.defineProperty(RemotePanel.prototype, "toolbarItemLabel", {get: function() {
     return "Remote";
-  });
+  }});
 
-  Object.defineProperty(RemotePanel.prototype, "statusBarItems", function() {
+  Object.defineProperty(RemotePanel.prototype, "statusBarItems", {get: function() {
     return [];
-  });
+  }});
 
-  Object.defineProperty(RemotePanel.prototype, "defaultFocusedElement", function() {
+  Object.defineProperty(RemotePanel.prototype, "defaultFocusedElement", {get: function() {
     return this.contentElement;
-  });
+  }});
 
   function RemotePanel() {
     RemotePanel.__super__.constructor.call(this, "remote");

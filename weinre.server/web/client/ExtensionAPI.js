@@ -161,7 +161,7 @@ function Panels()
         return panels[name];
     }
     for (var panel in panels)
-        Object.defineProperty(this, panel, bind(panelGetter, null, panel));
+        Object.defineProperty(this, panel, {get: bind(panelGetter, null, panel)});
 }
 
 Panels.prototype = {

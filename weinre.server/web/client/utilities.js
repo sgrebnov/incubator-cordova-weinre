@@ -280,21 +280,21 @@ Element.prototype.createChild = function(elementName, className)
     return element;
 }
 
-Object.defineProperty(Element.prototype, "totalOffsetLeft", function()
+Object.defineProperty(Element.prototype, "totalOffsetLeft", {get: function()
 {
     var total = 0;
     for (var element = this; element; element = element.offsetParent)
         total += element.offsetLeft + (this !== element ? element.clientLeft : 0);
     return total;
-});
+}});
 
-Object.defineProperty(Element.prototype, "totalOffsetTop", function()
+Object.defineProperty(Element.prototype, "totalOffsetTop", {get: function()
 {
     var total = 0;
     for (var element = this; element; element = element.offsetParent)
         total += element.offsetTop + (this !== element ? element.clientTop : 0);
     return total;
-});
+}});
 
 Element.prototype.offsetRelativeToWindow = function(targetWindow)
 {
@@ -314,7 +314,7 @@ Element.prototype.offsetRelativeToWindow = function(targetWindow)
     return elementOffset;
 }
 
-Object.defineProperty(KeyboardEvent.prototype, "data", function()
+Object.defineProperty(KeyboardEvent.prototype, "data", {get: function()
 {
     // Emulate "data" attribute from DOM 3 TextInput event.
     // See http://www.w3.org/TR/DOM-Level-3-Events/#events-Events-TextEvent-data
@@ -331,7 +331,7 @@ Object.defineProperty(KeyboardEvent.prototype, "data", function()
             else
                 return "";
     }
-});
+}});
 
 Text.prototype.select = function(start, end)
 {
@@ -350,7 +350,7 @@ Text.prototype.select = function(start, end)
     return this;
 }
 
-Object.defineProperty(Element.prototype, "selectionLeftOffset", function() {
+Object.defineProperty(Element.prototype, "selectionLeftOffset", {get: function() {
     // Calculate selection offset relative to the current element.
 
     var selection = window.getSelection();
@@ -369,7 +369,7 @@ Object.defineProperty(Element.prototype, "selectionLeftOffset", function() {
     }
 
     return leftOffset;
-});
+}});
 
 Node.prototype.isWhitespace = isNodeWhitespace;
 Node.prototype.displayName = nodeDisplayName;

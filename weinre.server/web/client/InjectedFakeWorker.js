@@ -49,8 +49,7 @@ Worker = function(url)
     {
         impl.channel.port1.onmessage = callback;
     }
-    Object.defineProperty(this, "onmessage", onmessageGetter);
-    Object.defineProperty(this, "onmessage", onmessageSetter);
+    Object.defineProperty(this, "onmessage", {get: onmessageGetter, set: onmessageSetter});
     this.addEventListener = bind(impl.channel.port1.addEventListener, impl.channel.port1);
     this.removeEventListener = bind(impl.channel.port1.removeEventListener, impl.channel.port1);
     this.dispatchEvent = bind(impl.channel.port1.dispatchEvent, impl.channel.port1);
@@ -149,8 +148,7 @@ FakeWorker.prototype = {
             self.channel.port2.onmessage = wrappedCallback;
         }
 
-        Object.defineProperty(workerFrame, "onmessage", onmessageGetter);
-        Object.defineProperty(workerFrame, "onmessage", onmessageSetter);
+        Object.defineProperty(workerFrame, "onmessage", {get: onmessageGetter, set: onmessageSetter});
         workerFrame.addEventListener = bind(this._addEventListener, this);
         workerFrame.removeEventListener = bind(this._removeEventListener, this);
         workerFrame.dispatchEvent = bind(this.channel.port2.dispatchEvent, this.channel.port2);
