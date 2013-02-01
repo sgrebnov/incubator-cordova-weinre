@@ -592,6 +592,19 @@ body.platform-linux .monospace, body.platform-linux .source-code {
 	-ms-user-select: none;
 }
 
+/* Hack to detect IE*/
+@media screen\0 {
+    /* Set image directly to console div element instead of using pseudo selector
+    since it causes displaying caret in incorrecty place*/
+    #console-prompt {
+        background: url(Images/userInputIcon.png) 7px 5px no-repeat;
+    }
+
+    #console-prompt::before{
+        content: none !important;
+    }
+}
+
 .console-message .bubble {
     display: inline-block;
     height: 14px;

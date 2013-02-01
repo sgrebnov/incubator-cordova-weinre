@@ -51,7 +51,12 @@ WebInspector.TextPrompt.prototype = {
         if (!x) {
             // Append a break element instead of setting textContent to make sure the selection is inside the prompt.
             this.element.removeChildren();
-            this.element.appendChild(document.createElement("br"));
+
+            // For IE  we don't need br to set console caret in right postion
+            if (! navigator.userAgent.match(/MSIE/i)) {
+			
+                this.element.appendChild(document.createElement("br"));
+            }
         } else
             this.element.textContent = x;
 
