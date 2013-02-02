@@ -3492,7 +3492,9 @@ return Weinre.wi.InspectorNotify.domContentEventFired(currentTime() - this._star
 };
 Target.prototype.setDocument = function() {
 var nodeData, nodeId;
+if (!Weinre.elementHighlighter) {
 Weinre.elementHighlighter = ElementHighlighter.create();
+}
 nodeId = Weinre.nodeStore.getNodeId(document);
 nodeData = Weinre.nodeStore.getNodeData(nodeId, 2);
 return Weinre.wi.DOMNotify.setDocument(nodeData);
