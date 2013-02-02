@@ -541,6 +541,7 @@ body.platform-linux .monospace, body.platform-linux .source-code {
     bottom: 23px;
     padding: 2px 0;
     overflow-y: overlay;
+	-ms-overflow-y: auto;
     word-wrap: break-word;
     -webkit-user-select: text;
 	-ms-user-select: text;
