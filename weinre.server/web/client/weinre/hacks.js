@@ -20,39 +20,52 @@
 // a place for hacks
 
 (function () {
-    this.extend = function (child, base) {
 
-        // webkit specific inheritance via __proto__
-        if ("__proto__" in child.prototype) {
-            child.prototype.__proto__ = base.prototype;
-            return;
-        }
+    var hasProto = "__proto__" in Object.prototype;
 
-        // if __proto__ does not exist do inheritance manually
-        var tmpFunc = new Function();
-        tmpFunc.prototype = Object.create(base.prototype);
+    if (!hasProto) {
+        Object.defineProperty(Object.prototype, '__proto__', {set : function(value){
+            var tmpFunc = new Function();
+            tmpFunc.prototype = Object.create(value);
 
-        function copyProperties(a, b) {
-            for (var i in b) {
-                var g = Object.getOwnPropertyDescriptor(b, i).get,
-                    s = Object.getOwnPropertyDescriptor(b, i).set;
+            function copyProperties(a, b) {
+                for (var i in b) {
+                    var g = Object.getOwnPropertyDescriptor(b, i).get,
+                        s = Object.getOwnPropertyDescriptor(b, i).set;
 
-                if (g || s) {
-                    Object.defineProperty(a, i, Object.getOwnPropertyDescriptor(b, i));
-                } else {
-                    a[i] = b[i];
+                    if (g || s) {
+                        Object.defineProperty(a, i, Object.getOwnPropertyDescriptor(b, i));
+                    } else {
+                        a[i] = b[i];
+                    }
+                }
+                return a;
+            }
+
+            copyProperties(tmpFunc.prototype, this);
+
+            // hack to be able to redefine object prototype; we can't do it another way
+            // because we have prototype as 'this' here only
+            var props = Object.getOwnPropertyNames(window.WebInspector),
+                prop;
+            for (var i = props.length; i--;) {
+                prop = props[i];
+                if (typeof(window.WebInspector[prop]) === 'function' && window.WebInspector[prop].prototype === this) {
+                    window.WebInspector[prop].prototype = new tmpFunc();
+                    window.WebInspector[prop].prototype.proto = value;
+                    break;
                 }
             }
-            return a;
-        }
 
-        copyProperties(tmpFunc.prototype, child.prototype);
+            this.constructor.prototype = new tmpFunc();
 
-        child.prototype = new tmpFunc();
-        child.prototype.constructor = child;
+        }, get : function(){
+            return this.proto;
+        }});
+    }
+
+    this.extend = function (child, base) {
         child.prototype.__proto__ = base.prototype;
-
-
     }
 })();
 
